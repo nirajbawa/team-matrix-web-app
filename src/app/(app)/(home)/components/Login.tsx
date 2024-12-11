@@ -6,7 +6,8 @@ import Triangle from './Triangle';
 function Login() {
     
     return (
-        <div className='bg-[#3a0808] min-h-svh flex-col-reverse overflow-x-hidden lg:flex-row text-white flex w-full h-full gap-36 pb-10 lg:px-28 justify-center items-center' style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(135deg, rgba(55,27,35,0.8688725490196079) 0%, rgba(62,24,29,0.7120098039215687) 12%, rgba(12,6,5,0.633578431372549) 80%)` }}>
+        <div className='bg-[#3a0808] min-h-svh flex-col-reverse overflow-x-hidden lg:flex-row text-white flex w-full h-full gap-11 md:gap-36 pb-10 lg:px-28 justify-center items-center' 
+        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.35)), linear-gradient(138deg, rgb(55 27 35 / 59%) 0%, rgb(62 24 29 / 30%) 12%, rgb(12 6 5 / 53%) 80%)` }}>
             <LoginForm/>
             <Triangle/>
         </div>

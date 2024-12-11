@@ -17,45 +17,45 @@ function MobileMenu({ isOpen, toggleMenu }: { isOpen: boolean; toggleMenu: () =>
                 className={`h-full w-full flex justify-center pt-20 fixed top-0 z-50 mobile-menu-glass-bg ${isOpen ? "block" : "hidden"}`}>
                 <ul className='flex flex-col w-full justify-start px-7 text-xl'>
                     <li className='w-full text-white text-center h-16 flex justify-center items-center'>
-                        <Link href="" onClick={toggleMenu}>
-                            SPONSORS
-                        </Link>
-                    </li>
-                    <li className='w-full text-white text-center h-16 flex justify-center items-center'>
-                        <Link href="" onClick={toggleMenu}>
-                            ANNOUNCEMENTS
-                        </Link>
-                    </li>
-                    <li className='w-full text-white text-center h-16 flex justify-center items-center'>
-                        <Link href="" onClick={toggleMenu}>
+                        <Link href="#about" onClick={toggleMenu}>
                             ABOUT
                         </Link>
                     </li>
                     <li className='w-full text-white text-center h-16 flex justify-center items-center'>
-                        <Link href="" onClick={toggleMenu}>
+                        <Link href="#projects" onClick={toggleMenu}>
+                            PROJECTS
+                        </Link>
+                    </li>
+                    <li className='w-full text-white text-center h-16 flex justify-center items-center'>
+                        <Link href="#members" onClick={toggleMenu}>
                             MEMBERS
                         </Link>
                     </li>
                     <li className='w-full text-white text-center h-16 flex justify-center items-center'>
-                        <Link href="" onClick={toggleMenu}>
-                            RECRUITMENT
+                        <Link href="#sponsors" onClick={toggleMenu}>
+                            SPONSORS
                         </Link>
                     </li>
                     <li className='w-full text-white text-center h-16 flex justify-center items-center'>
-                        <Link href="" onClick={toggleMenu}>
+                        <Link href="#login" onClick={toggleMenu}>
                             SIGN IN
                         </Link>
                     </li>
+                    <li className='w-full text-white text-center h-16 flex justify-center items-center'>
+                        <Link href="#recruitment" onClick={toggleMenu}>
+                            RECRUITMENT
+                        </Link>
+                    </li>
                     <motion.li
-                        key={isOpen?"open":"close"}
+                        key={isOpen ? "open" : "close"}
                         initial={{ rotate: 0 }} // Initial rotation angle
                         animate={{ rotate: 360 }} // Rotate to 360 on click, back to 0 on second click
                         transition={{
                             duration: 2, // Duration of the animation
                             ease: 'easeInOut', // Smooth easing function
                         }}
-                    
-                        onClick={()=>{
+
+                        onClick={() => {
                             toggleMenu();
                         }} className='w-full text-white text-center h-16 flex justify-center items-center'>
                         <CloseIcon fontSize='large' />
