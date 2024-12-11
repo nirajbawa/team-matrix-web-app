@@ -1,3 +1,4 @@
+"use client";
 import ProjectCard from '@/components/cards/ProjectCard';
 import React, { useState } from 'react';
 import EditProjectDialog from './EditProjectDialog';
