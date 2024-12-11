@@ -8,7 +8,6 @@ export const revalidate = 60;
 function page() {
   return (
     <div className='min-h-[100vh] px-10 flex justify-between flex-row bg-white'>
-     
       <ChartSection />
       <UsersSection />
     </div>

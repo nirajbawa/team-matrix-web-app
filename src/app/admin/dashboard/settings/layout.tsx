@@ -1,6 +1,10 @@
 import SettingsSidebar from "@/components/sidebars/SettingsSidebar"
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <div className="flex w-full h-[100vh] overflow-hidden">
       <SettingsSidebar />
