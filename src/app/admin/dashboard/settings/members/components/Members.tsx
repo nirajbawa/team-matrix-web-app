@@ -10,15 +10,11 @@ interface MembersProps{
 
 function Members({data, fetchData}:MembersProps) {
 
-  
     const [open, setOpen] = useState(false);
     const [item, setItem] = useState<any>();
     const handleOpen = () => {
         setOpen(!open);
-    }
-
-
-   
+    }   
 
     useEffect(() => {
         fetchData();

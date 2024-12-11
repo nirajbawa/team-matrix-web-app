@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState } from 'react';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import CreateNewMemberDialog from './CreateNewMemberDialog';
@@ -26,4 +26,4 @@ function Nav({fetchData}:NavProps) {
     )
 }
 
-export default Nav
+export default Nav;
