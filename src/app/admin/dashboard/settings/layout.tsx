@@ -1,3 +1,4 @@
+"use client";
 import SettingsSidebar from "@/components/sidebars/SettingsSidebar"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
