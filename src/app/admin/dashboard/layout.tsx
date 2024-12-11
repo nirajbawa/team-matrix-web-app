@@ -1,4 +1,3 @@
-"use client"
 import type { Metadata } from "next";
 import AdminDashboardNavbar from "@/components/navbars/AdminDashboardNavbar";
 

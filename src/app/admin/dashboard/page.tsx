@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import ChartSection from './components/ChartSection'
 import UsersSection from './components/UsersSection'
