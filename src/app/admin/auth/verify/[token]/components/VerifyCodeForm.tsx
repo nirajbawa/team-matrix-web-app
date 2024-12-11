@@ -89,11 +89,11 @@ function VerifyCodeForm({tokenPayload, token}:LoginFormProps) {
     }
 
     return (
-        <div className='w-full min-h-[100vh] flex justify-center items-center'>
+        <div className='w-full md:min-h-[100vh] flex justify-center items-center'>
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-8 w-[25%] flex flex-col gap-2 rounded-lg h-full shadow-[#0000001a] shadow-2xl p-5 py-10"
+                    className="space-y-8 md:w-[25%] flex flex-col gap-2 rounded-lg md:h-full shadow-[#0000001a] shadow-2xl p-5 py-10"
                 >
                     <div className='text-2xl capitalize mb-1 font-bold text-center'>
                         Verify Email

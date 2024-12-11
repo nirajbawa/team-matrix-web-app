@@ -69,7 +69,7 @@ function LoginForm() {
         <Form {...form}>
             <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-8 w-[25%] flex flex-col gap-2 rounded-lg h-full shadow-[#0000001a] shadow-2xl p-5 py-10"
+                className="space-y-8 md:w-[25%] flex flex-col gap-2 rounded-lg h-full shadow-[#0000001a] shadow-2xl p-5 py-10"
             >
                 <div className='text-3xl capitalize mb-5 font-bold text-center'>
                     Admin Login
