@@ -1,3 +1,4 @@
+"use client"
 import { z } from "zod";
 
 export const sponsors1Schema = z.object({

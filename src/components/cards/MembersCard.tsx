@@ -1,6 +1,6 @@
+"use client"
 import React from 'react';
 import Image from 'next/image';
-import TeamMemberPicture from "@/assets/images/member.png"
 import { Lexend_Giga } from 'next/font/google';
 
 const lexend_giga = Lexend_Giga({
