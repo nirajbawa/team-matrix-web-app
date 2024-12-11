@@ -1,4 +1,5 @@
-import SettingsSidebar from "@/components/sidebars/SettingsSidebar"
+"use client"
+import SettingsSidebar from "@/components/sidebars/SettingsSidebar";
 
 export default function RootLayout({
   children,

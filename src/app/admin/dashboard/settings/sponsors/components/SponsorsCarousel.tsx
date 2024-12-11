@@ -77,8 +77,6 @@ function SponsorsCarousel({ data, fetchData }: SponsorsCarouselProps) {
           )
         })}
       </CarouselContent>
-      {/* <CarouselPrevious className="bg-transparent" />
-      <CarouselNext  className="bg-transparent" /> */}
     </Carousel>
   )
 }
