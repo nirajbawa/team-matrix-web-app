@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import SponsorAbout from './components/SponsorAbout';
 import SponsorGallery from './components/SponsorGallery';
