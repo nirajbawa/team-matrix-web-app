@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
         subject: `Complete Login Process On Team Matrix`,
         html: content,
     };
-    transporter.sendMail(mailOptions)
+    await transporter.sendMail(mailOptions);
 
     return Response.json(
       {

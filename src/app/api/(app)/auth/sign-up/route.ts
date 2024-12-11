@@ -90,7 +90,7 @@ export async function POST(req: NextRequest) {
             subject: `Verify Your Email`,
             html: content,
         };
-        transporter.sendMail(mailOptions);
+        await transporter.sendMail(mailOptions);
 
         return Response.json(
             {
