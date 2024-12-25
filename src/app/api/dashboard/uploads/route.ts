@@ -11,10 +11,10 @@ export async function POST(req: NextRequest) {
     const arrayBuffer = await file.arrayBuffer();
     const imageBuffer = Buffer.from(arrayBuffer);
 
-    const resizedBuffer = await sharp(imageBuffer).resize(200, 200).toBuffer();
+    // const resizedBuffer = await sharp(imageBuffer).resize(200, 200).toBuffer();
 
     // Step 3: Convert resized buffer to Base64
-    const base64ResizedImage = `data:image/jpeg;base64,${resizedBuffer.toString("base64")}`;
+    const base64ResizedImage = `data:image/jpeg;base64,${imageBuffer.toString("base64")}`;
 
     const res = await uploadToCloudinary(base64ResizedImage, file.name);
     

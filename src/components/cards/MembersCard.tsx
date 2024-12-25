@@ -21,12 +21,21 @@ function MembersCard({image, name, position}:MembersCardProps) {
     return (
         <div data-aos="fade-up" data-aos-duration="4000" className='w-[15rem] md:w-60 min-h-[23rem] md:min-h-96 z-20  bg-black text-white p-3 mt-20 flex flex-col gap-y-8'>
             <div className='bg-[#3a0808] h-56 relative w-full'>
-                <div className=' w-full mb-11 h-72 absolute top-[-66px] bg-no-repeat bg-cover bg-center'>
+                <div className=' w-full mb-11 h-72 absolute top-[-58px] bg-no-repeat bg-cover bg-center'>
                     <Image
                         src={image}
-                        fill={true}
+                        width={500}
+                        height={500}
                         alt="Picture of the author"
                         className='png-border'
+                        style={{
+                            width: "100%", // Resize the image to fit horizontally
+                            height: "auto", // Maintain aspect ratio
+                            position: "absolute",
+                            top: "50%", // Center vertically
+                            left: "50%", // Center horizontally
+                            transform: "translate(-50%, -50%)", // Crop the center of the image
+                          }}
                     />
                 </div>
             </div>
@@ -38,4 +47,4 @@ function MembersCard({image, name, position}:MembersCardProps) {
     )
 }
 
-export default MembersCard
+export default MembersCard;
