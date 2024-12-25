@@ -10,10 +10,8 @@ export async function POST(req: NextRequest) {
     
     const arrayBuffer = await file.arrayBuffer();
     const imageBuffer = Buffer.from(arrayBuffer);
-    console.log("Original Buffer Size:", imageBuffer.length);
 
-    const resizedBuffer = await sharp(imageBuffer).resize(500, 500).toBuffer();
-    console.log("Resized Buffer Size:", resizedBuffer.length);
+    const resizedBuffer = await sharp(imageBuffer).resize(200, 200).toBuffer();
 
     // Step 3: Convert resized buffer to Base64
     const base64ResizedImage = `data:image/jpeg;base64,${resizedBuffer.toString("base64")}`;
