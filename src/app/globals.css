@@ -131,7 +131,7 @@ html {
   height: 0;
   border-style: solid;
   border-width: 259.8px 150px 0px 150px;
-  border-color: #96171d0f transparent transparent transparent;
+  border-color: #96171d2e  transparent transparent transparent;
 }
 
 .triangle-bottom-inner {
@@ -146,7 +146,7 @@ html {
   height: 0;
   border-style: solid;
   border-width: 433px 250px 0px 250px;
-  border-color: #96171d0d transparent transparent transparent;
+  border-color: #96171d1f transparent transparent transparent;
 }
 
 .triangle-bottom-image {
@@ -163,7 +163,7 @@ html {
   height: 0;
   border-style: solid;
   border-width: 606.2px 350px 0px 350px;
-  border-color: #96171d0d transparent transparent transparent;
+  border-color: #96171d30 transparent transparent transparent;
 }
 
 .custom-placeholder::placeholder {
@@ -207,6 +207,7 @@ html {
   position: absolute;
   top: -86px;
   left: 10px;
+  z-index: 20;
 }
 
 .quote-box::after {
@@ -218,6 +219,7 @@ html {
   position: absolute;
   bottom: -170px;
   right: 10px;
+  z-index: 50;
 }
 
 
@@ -227,4 +229,9 @@ html {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9.6px);
   -webkit-backdrop-filter: blur(9.6px);
+}
+
+.read-more{
+  background: rgb(28,9,10);
+  background: linear-gradient(180deg, rgb(28 9 10 / 23%) 0%, rgb(9 3 3 / 73%) 35%, rgb(0 0 0 / 92%) 84%);
 }

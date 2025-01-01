@@ -28,11 +28,14 @@ import LoadingAnimation from "@/assets/lotties/gray-loading.json";
 import { Loader2 } from "lucide-react";
 import { projectSchema } from "@/schemas/settingsSchema";
 import { Textarea } from "@/components/ui/textarea";
+import { IconButton } from "@material-tailwind/react";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+
 
 interface EditProjectDialogProps {
   open: boolean;
   handleOpen: () => void;
-  data:any;
+  data: any;
   fetchData: () => void;
 }
 
@@ -44,6 +47,8 @@ function EditProjectDialog({ open, handleOpen, data, fetchData }: EditProjectDia
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [file, setFile] = useState<any>(null);
   const [upload, setUpload] = useState<boolean>(false);
+  const [images, setImages] = useState<string[]>([]);
+  const [showBtn, setShowBtn] = useState<number | null>(null);
 
 
   const lottieProps = {
@@ -69,33 +74,33 @@ function EditProjectDialog({ open, handleOpen, data, fetchData }: EditProjectDia
     setIsSubmitting(true);
     try {
 
-      if(file==null)
-      {
+
+      if (images.length < 1) {
         toast({
-          title: "Upload Image",
-          description: "Please upload image also",
+          title: "Upload Images",
+          description: "Please upload at least 1 images",
           variant: "destructive",
         });
-      }else{
+      } else {
 
-      const payload = {
-        name: values.name,
-        text: values.text,
-        image: file
-      };
-      let id = data?._id;
-      {
-        const res = await axios.patch<ApiResponse>(`/api/admin/settings/projects/${id}`, payload);
-        const data = res.data;
-        toast({
-          title: "Member Updated",
-          description: data.message,
-          variant: "default",
-        });
-        fetchData();
-        handleOpen();
+        const payload = {
+          name: values.name,
+          text: values.text,
+          image: images
+        };
+        let id = data?._id;
+        {
+          const res = await axios.patch<ApiResponse>(`/api/admin/settings/projects/${id}`, payload);
+          const data = res.data;
+          toast({
+            title: "Member Updated",
+            description: data.message,
+            variant: "default",
+          });
+          fetchData();
+          handleOpen();
+        }
       }
-    }
     }
     catch (error) {
       const axiosError = error as AxiosError<ApiResponse>;
@@ -131,7 +136,7 @@ function EditProjectDialog({ open, handleOpen, data, fetchData }: EditProjectDia
   }
 
 
-  const deleteMember = async() =>{
+  const deleteMember = async () => {
     try {
 
 
@@ -147,7 +152,7 @@ function EditProjectDialog({ open, handleOpen, data, fetchData }: EditProjectDia
         fetchData();
         handleOpen();
       }
- 
+
     }
     catch (error) {
       const axiosError = error as AxiosError<ApiResponse>;
@@ -165,17 +170,44 @@ function EditProjectDialog({ open, handleOpen, data, fetchData }: EditProjectDia
   }
 
 
-  useEffect(()=>{
+  const deleteButton = (id:number) => {
+    setImages((state:string[])=>state.filter((item:string, index:number)=>(index!==id)))
+  }
+
+  useEffect(() => {
     form.setValue("name", data?.name);
     form.setValue("text", data?.text);
-    setFile(data?.image);
+    if (data?.image !== undefined) {
+      setImages(data?.image);
+    }
   }, [data]);
+
+
+  useEffect(() => {
+
+    if (file != null) {
+      setImages((state) => [...state, file])
+    }
+
+  }, [file]);
+
+
+  useEffect(() => {
+
+    if (images.length === 5) {
+      setImages((state) => state.slice(1));
+    }
+
+  }, [images]);
+
+
+
 
   return (
     <>
       <Dialog open={open} handler={handleOpen}>
         <DialogHeader className="p-5 pl-10 pt-10">Edit Member</DialogHeader>
-        <DialogBody>
+        <DialogBody className="h-[30rem] overflow-y-scroll">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
@@ -200,7 +232,7 @@ function EditProjectDialog({ open, handleOpen, data, fetchData }: EditProjectDia
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                      <Textarea autoComplete="off"  className="resize-none h-32" placeholder="Text" {...field} />
+                        <Textarea autoComplete="off" className="resize-none h-32" placeholder="Text" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -223,6 +255,28 @@ function EditProjectDialog({ open, handleOpen, data, fetchData }: EditProjectDia
                   </div>
 
                 </div>
+                <div className="w-full flex justify-between flex-wrap gap-y-5">
+                  {
+                    images && images.map((item, index) => (
+                      <div
+                        className="w-64 h-40 bg-no-repeat bg-center rounded-xl"
+                        key={index}
+                        style={{ backgroundImage: `url(${item})`, backgroundSize: "cover", backgroundPosition: "center" }}
+                      >
+
+                        <div
+                        onMouseLeave={() => { setShowBtn(null) }} onMouseEnter={() => setShowBtn(index)} 
+                        className="w-64 h-40 flex justify-center items-center rounded-xl transition-all duration-150 cursor-pointer hover:bg-[#00000073] absolute">
+                          <IconButton color="red" onClick={() => {
+                            deleteButton(index)
+                          }} className={`${showBtn == index ? "" : "hidden"}`}>
+                            <DeleteForeverIcon />
+                          </IconButton>
+                        </div>
+                      </div>
+                    ))
+                  }
+                </div>
               </div>
               <div className='w-full flex justify-end pr-5 items-center'>
                 <Button type="submit" disabled={isSubmitting} variant="gradient" color="green" className='bg-gray-900 text-white'>
@@ -240,7 +294,7 @@ function EditProjectDialog({ open, handleOpen, data, fetchData }: EditProjectDia
           </Form>
         </DialogBody>
         <DialogFooter>
-        <Button
+          <Button
             variant="gradient"
             color="red"
             onClick={deleteMember}

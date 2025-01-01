@@ -1,5 +1,5 @@
 import dbConnect from "@/lib/dbConnect";
-import ProjectModel from "@/models/Model";
+import ProjectModel from "@/models/Project";
 import { NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -24,6 +24,7 @@ export async function POST(req: NextRequest) {
         );
        
     } catch (error) {
+        console.log(error)
         return Response.json(
             {
                 success: false,

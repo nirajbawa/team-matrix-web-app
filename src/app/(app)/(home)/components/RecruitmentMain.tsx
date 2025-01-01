@@ -28,7 +28,7 @@ function RecruitmentMain() {
 
     return (
         <div className={`pt-24 gap-y-24 md:pt-0 text-white w-full md:px-20 min-h-[100vh] h-full flex-col md:flex-row justify-center items-center relative py-10 bg-[#3a0808] flex md:justify-between ${scroll ? 'md:min-h-[200vh]' : 'md:min-h-svh'}`} style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.35)), linear-gradient(44deg, rgb(55 27 35 / 59%) 0%, rgb(62 24 29 / 17%) 12%, rgb(12 6 5 / 53%) 80%)`
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.35)), linear-gradient(44deg, rgba(55, 27, 35, 0.59) 0%, rgba(62, 24, 29, 0.17) 12%, rgba(12, 6, 5, 0.53) 80%)`
         }}>
             <div data-aos="slide-right" data-aos-duration="4000" className='md:w-[50%] flex gap-5 px-10 flex-col'>
 

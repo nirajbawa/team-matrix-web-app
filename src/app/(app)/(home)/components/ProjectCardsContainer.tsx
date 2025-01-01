@@ -15,8 +15,8 @@ function ProjectCardsContainer({data}:ProjectCardsContainerProps) {
 
 
     return (
-        <div className={` text-white w-full items-start pt-40 px-10 md:px-20 lg:px-28  ${scroll ? 'md:min-h-[200vh]' : 'md:min-h-svh'} flex-col gap-24 md:gap-y-32  lg:justify-center justify-start md:items-center relative py-10 bg-[#3a0808] flex md:justify-between`} style={{
-            backgroundImage: `linear-gradient(rgb(0 0 0 / 30%), rgb(0 0 0 / 59%)), linear-gradient(68deg, rgba(55, 27, 35, 0.81) 0%, rgb(62 24 29 / 89%) 12%, rgb(12 6 5 / 54%) 80%)`
+        <div className={` text-white w-full items-start pt-24 pb-20 px-5 sm:px-10 md:px-20 lg:px-28  ${scroll ? 'md:min-h-[200vh]' : 'md:min-h-svh'} flex-col gap-24 md:gap-y-32  lg:justify-center justify-start md:items-center relative  bg-[#3a0808] flex md:justify-between`} style={{
+            backgroundImage: `linear-gradient(rgb(0 0 0 / 30%), rgb(0 0 0 / 57%)), linear-gradient(68deg, rgb(55 27 35 / 39%) 0%, rgb(62 24 29 / 89%) 12%, rgb(12 6 5 / 39%) 80%)`
         }}>
 
            {

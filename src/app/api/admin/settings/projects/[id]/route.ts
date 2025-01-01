@@ -1,5 +1,5 @@
 import dbConnect from "@/lib/dbConnect";
-import ProjectModel from "@/models/Model";
+import ProjectModel from "@/models/Project";
 import { NextRequest } from "next/server";
 
 export async function PATCH(req: NextRequest,   params: { params: Promise<{ id: string }> }) {

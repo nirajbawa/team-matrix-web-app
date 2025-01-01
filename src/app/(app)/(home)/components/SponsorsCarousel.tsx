@@ -30,7 +30,7 @@ function SponsorsCarousel({data}:SponsorsCarouselProps) {
       <CarouselContent>
         {data.map((item:any, index:number) => (
           <CarouselItem key={index} className="md:basis-1/2 bg-transparent lg:basis-1/3">
-            <div className="p-1">
+            <div className="p-14 sm:p-1">
               <Card className="rounded-full bg-white border-none shadow-none">
                 <CardContent className="flex rounded-full aspect-square items-center justify-center p-6" style={{ background: `url(${item.image})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                  
@@ -40,8 +40,6 @@ function SponsorsCarousel({data}:SponsorsCarouselProps) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      {/* <CarouselPrevious className="bg-transparent" />
-      <CarouselNext  className="bg-transparent" /> */}
     </Carousel>
   )
 }

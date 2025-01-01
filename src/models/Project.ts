@@ -3,7 +3,7 @@ import mongoose, { Schema, Document } from "mongoose";
 export interface Project extends Document {
     name: string;
     text: string;
-    image: string;
+    image: string[];
 }
 
 const ProjectSchema: Schema<Project> = new mongoose.Schema(
@@ -19,7 +19,7 @@ const ProjectSchema: Schema<Project> = new mongoose.Schema(
             trim: true,
         },
         image: {
-            type: String,
+            type: [String],
             required: [true, "image is required"],
             trim: true,
         },

@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectCardsContainer from './ProjectCardsContainer';
-import ProjectModel from '@/models/Model';
+import ProjectModel from '@/models/Project';
 import dbConnect from '@/lib/dbConnect';
 
 async function Projects() {

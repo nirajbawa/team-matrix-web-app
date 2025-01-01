@@ -221,7 +221,6 @@ function EditMemberDialog({ open, handleOpen, data, fetchData }: EditMemberDialo
                     }
 
                   </div>
-
                 </div>
               </div>
               <div className='w-full flex justify-end pr-5 items-center'>
