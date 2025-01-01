@@ -27,7 +27,6 @@ function MembersCard({image, name, position}:MembersCardProps) {
                         width={500}
                         height={500}
                         alt="Picture of the author"
-                        className='png-border'
                         style={{
                             width: "100%", // Resize the image to fit horizontally
                             height: "auto", // Maintain aspect ratio
