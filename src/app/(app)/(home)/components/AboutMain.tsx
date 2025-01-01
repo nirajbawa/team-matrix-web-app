@@ -33,7 +33,7 @@ function AboutMain({ about }: AboutMainProps) {
 
     return (
         <div className='bg-[#3a0808] min-h-[100vh] h-full flex-col-reverse overflow-hidden px-5 py-10 lg:flex-row text-white flex w-full gap-14 md:gap-36 pb-10 lg:px-28 justify-center items-center'
-            style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(135deg, rgba(55, 27, 35, 0.8688725490196079) 0%, rgba(62, 24, 29, 0.7120098039215687) 12%, rgb(12 6 5 / 51%) 80%)` }}>
+            style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgb(0 0 0 / 21%)), linear-gradient(135deg, rgba(55, 27, 35, 0.8688725490196079) 0%, rgb(62 24 29 / 32%) 12%, rgb(12 6 5 / 45%) 80%)` }}>
             <div data-aos="slide-up" data-aos-duration="4000" className='w-full transition-all ease-linear duration-100 md:w-[50%] quote-box text-center md:text-left flex justify-center items-center p-3 py-10 md:p-10 border-2 sponsors_card_bg border-white rounded-xl'>
                 <div className={`${fullText?"hidden":""} sm:hidden`}>
                 {(about1.length)<=587?<>{about1}</>:

@@ -53,8 +53,8 @@ export function ImageCarousel({ data }: any) {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious className='bg-transparent' />
-            <CarouselNext className='bg-transparent' />
+            <CarouselPrevious className='hidden sm:flex bg-transparent' />
+            <CarouselNext className='hidden sm:flex bg-transparent' />
         </Carousel>
     )
 }
