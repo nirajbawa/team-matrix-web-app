@@ -187,7 +187,7 @@ html {
 
 .png-border {
   -webkit-filter: drop-shadow(5px 5px 0 rgb(255, 255, 255)) drop-shadow(-1px -1px 0 rgb(255, 255, 255));
-  filter: drop-shadow(5px 5px 0 rgb(255, 255, 255)) drop-shadow(-1px -1px 0 rgb(255, 255, 255));
+  filter: drop-shadow(3px 3px 3px rgb(255, 255, 255)) drop-shadow(-1px -1px 0 rgb(255, 255, 255));
 }
 
 .quote-box {

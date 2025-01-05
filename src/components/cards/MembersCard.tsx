@@ -23,6 +23,7 @@ function MembersCard({image, name, position}:MembersCardProps) {
             <div className='bg-[#3a0808] h-56 relative w-full'>
                 <div className=' w-full mb-11 h-72 absolute top-[-58px] bg-no-repeat bg-cover bg-center'>
                     <Image
+                    className='png-border'
                         src={image}
                         width={500}
                         height={500}
