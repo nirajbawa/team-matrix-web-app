@@ -20,9 +20,9 @@ async function MembersCardContainer() {
         const data = await fetchData();
         const filtered1 = data?.filter((item: any) => (item.position == "Captain"));
         const [first] = filtered1 || [];
-        const filtered2 = data?.filter((item: any) => item.position === "Manager" || item.position === "Electronics Co-Head");
+        const filtered2 = data?.filter((item: any) => item.position === "Manager" || item.position === "Co-Manager");
         const [second, third] = filtered2 || [];
-        const remaining = data?.filter((item: any) => item.position !== "Manager" && item.position !== "Electronics Co-Head" && item.position !== "Captain");
+        const remaining = data?.filter((item: any) => item.position !== "Manager" && item.position !== "Co-Manager" && item.position !== "Captain");
    
         return (
             <div className='w-full h-full pt-5 flex-wrap gap-x-24 flex justify-center md:justify-between md:p-10 md:px-36 z-50'>

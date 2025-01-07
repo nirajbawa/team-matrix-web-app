@@ -26,7 +26,6 @@ function MembersScrollCards({ data }: MembersProps) {
 
 
     const showCard = (): void => {
-        // router.replace("#members");
         setShowCards((state) => !state);
     }
 
