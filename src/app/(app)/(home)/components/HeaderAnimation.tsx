@@ -14,21 +14,7 @@ function HeaderAnimation() {
     };
 
     return (
-        <div className='h-[20rem] md:hidden w-full flex justify-center items-center'>   
-            <Ztext
-                depth='1rem'
-                direction='both'
-                event='pointer'
-                eventRotation='30deg'
-                eventDirection='default'
-                fade={false}
-                layers={10}
-                perspective='500px'
-                style={{
-                    fontSize: '4rem',
-                    textAlign:"center"
-                }}
-            > 
+        <div className='h-[15rem] md:hidden w-full flex justify-center items-center'>   
             <LottiefilePlayer
             loop={lottieProps.loop}
             autoplay={lottieProps.autoplay}
@@ -36,7 +22,6 @@ function HeaderAnimation() {
             height={lottieProps.height}
             width={lottieProps.width}
         />
-        </Ztext>  
         </div>
     )
 }

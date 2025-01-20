@@ -26,9 +26,9 @@ export default async function Home() {
         <Projects />
       </section>
 
-      <section id="members">
+      {/* <section id="members">
         <MembersSection />
-      </section>
+      </section> */}
 
       <section id='sponsors'>
         <Sponsors />

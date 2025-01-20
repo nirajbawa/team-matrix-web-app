@@ -12,41 +12,21 @@ const BlackOpsOne = localFont({
 
 function Header() {
     return (
-        <div className={`${BlackOpsOne.variable} font-blackOps mt-10 md:mt-0 gap-y-6 w-full pt-[20%] sm:pt-[10%] h-full flex justify-center items-center flex-col`}>
-            <div className='hidden sm:block'>
-            <Ztext
-                depth='1rem'
-                direction='both'
-                event='pointer'
-                eventRotation='30deg'
-                eventDirection='default'
-                fade={false}
-                layers={10}
-                perspective='500px'
-                style={{
-                    fontSize: '4rem',
-                    textAlign:"center"
-                }}
-            >
+        <div className={`${BlackOpsOne.variable} font-blackOps mt-10 md:mt-0 gap-y-2 w-full pt-[20%] sm:pt-[10%] h-full flex justify-center items-center flex-col`}>
+            <div className='text-center '>
+        
                 <h1 role='img' aria-label='emoji' className='text-6xl md:text-6xl lg:text-8xl text-white z-0' data-aos="fade-down" data-aos-duration="4000" >
                     TEAM
                 </h1>
-                <h2 role='img' aria-label='emoji' className='text-6xl md:text-7xl lg:text-9xl text-red-600 z-0' data-aos="fade-up" data-aos-duration="4000" >
+                <h2 role='img' aria-label='emoji' className='text-6xl md:text-7xl lg:text-9xl text-red-600 z-0' data-aos="fade-down" data-aos-duration="4000" >
                     MATRIX
                 </h2>
-            </Ztext>
-            </div>
-
-            <div className='sm:hidden text-center text-[4rem]'>
-            <h1 role='img' aria-label='emoji' className='text-6xl md:text-6xl lg:text-8xl text-white z-0' data-aos="fade-down" data-aos-duration="4000" >
-                    TEAM
-                </h1>
-                <h2 role='img' aria-label='emoji' className='text-6xl md:text-7xl lg:text-9xl text-red-600 z-0' data-aos="fade-up" data-aos-duration="4000" >
-                    MATRIX
-                </h2>
-            </div>
            
+            </div>
 
+            <div className='text-white text-center md:text-2xl border-t-white border-t-2 pt-5' data-aos="fade-up">
+                Building Future with Robotics
+            </div>
         </div>
     )
 }

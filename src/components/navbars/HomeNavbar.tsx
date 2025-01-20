@@ -12,6 +12,8 @@ import { Lexend_Giga } from 'next/font/google';
 import useHeroStore from '@/store/useHeroStore';
 import useScreenSize from '@/hooks/useScreenSize';
 import { useRouter } from 'next/navigation';
+import { Button } from "@/components/ui/button";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const lexend_giga = Lexend_Giga({
     display: 'swap',
@@ -60,7 +62,13 @@ function HomeNavbar() {
                     ease: 'easeInOut',      // Easing function for smooth animation
                 }}
                 className={`${isSticky ? "fixed top-0" : "absolute"}  nav-glass-bg  ${lexend_giga.style} text-white w-full h-16 flex justify-center xl:justify-between items-center z-50`}>
+                <div className='w-[50%] flex justify-start xl:hidden text-xl px-4'>
+                    <button onClick={toggleMenu} className='w-12 text-4xl transition-all delay-200 p-1 flex justify-center items-center rounded-sm hover:bg-[#fcfbfb27]'>
+                        <MenuIcon fontSize="large" />
+                    </button>
+                </div>
                 <div className='hidden xl:flex border-b-white border-b-2 h-full justify-start  items-center w-[50%] px-10'>
+
                     <ul className='flex justify-between gap-x-16 items-center text-lg pl-16'>
 
                         <li className={`rounded-md transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "about" ? "bg-white text-black" : ""}`}>
@@ -85,19 +93,23 @@ function HomeNavbar() {
                 </div>
                 <div>
                     <div data-aos="fade-down" data-aos-duration="4000" className={`w-20 h-16 mt-10 md:w-36 md:h-28 md:mt-24`} >
-                            <Image
-                                hidden={isOpen}
-                                onClick={()=>{
-                                    if(lg && xl && xl2){
-                                        router.replace("#hero");
-                                    }
-                                    toggleMenu();
-                                }}
-                                src={MatrixLogo}
-                                fill={true}
-                                alt="Picture of the author"
-                            />
+                        <Image
+                            hidden={isOpen}
+                            onClick={() => {
+                                    router.replace("#hero");
+                            }}
+                            src={MatrixLogo}
+                            fill={true}
+                            alt="Picture of the author"
+                        />
                     </div>
+                </div>
+                <div className='w-[50%] flex justify-end xl:hidden text-xl px-4'>
+                    <button onClick={() => {
+                                    router.replace("#login");
+                            }} className='text-xl h-10 flex justify-center transition-all delay-200 p-3 rounded-md items-center hover:bg-[#fcfbfb27]'>
+                        Sign In
+                    </button>
                 </div>
                 <div className='hidden xl:flex border-b-white border-b-2 h-full justify-end items-center w-[50%] px-10'>
                     <ul className='flex justify-between gap-x-16 items-center text-lg pr-9'>
