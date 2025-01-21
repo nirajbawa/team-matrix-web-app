@@ -1,47 +1,21 @@
-import About from "./components/About";
-import Footer from "./components/Footer";
+import Footer from "./components-old/Footer";
 import HeroSection from "./components/HeroSection";
-import Login from "./components/Login";
-import MembersSection from "./components/MembersSection";
-import Projects from "./components/Projects";
-import Recruitment from "./components/Recruitment";
-import Sponsors from "./components/Sponsors";
+import ProjectsMain from "./components/ProjectsMain";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 export const revalidate = 60;
 
 export default async function Home() {
   return (
     <div className="w-full">
-
-      <section id='hero'>
+      <section id="hero">
         <HeroSection />
       </section>
-
-      <section id='about'>
-        <About />
-      </section>
-
-      <section id='projects'>
-        <Projects />
-      </section>
-
-      {/* <section id="members">
-        <MembersSection />
-      </section> */}
-
-      <section id='sponsors'>
-        <Sponsors />
-      </section>
-
-      <section id='login' >
-        <Login />
-      </section>
-
-      <section id='recruitment'>
-        <Recruitment />
-      </section>
-
+      <div className="w-full h-full">
+        <section id="about">
+          <ProjectsMain />
+        </section>
+      </div>
       <Footer />
     </div>
   );

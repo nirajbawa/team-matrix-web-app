@@ -4,13 +4,11 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-
 }
 
 html {
   scroll-behavior: smooth !important;
- }
-
+}
 
 @layer base {
   :root {
@@ -94,7 +92,7 @@ html {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
- 
+
   .dark {
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -105,7 +103,6 @@ html {
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
 }
 
 @layer base {
@@ -117,7 +114,6 @@ html {
     @apply bg-background text-foreground;
   }
 }
-
 
 .triangle-bottom-inner-inner {
   position: absolute;
@@ -131,7 +127,7 @@ html {
   height: 0;
   border-style: solid;
   border-width: 259.8px 150px 0px 150px;
-  border-color: #96171d2e  transparent transparent transparent;
+  border-color: #96171d2e transparent transparent transparent;
 }
 
 .triangle-bottom-inner {
@@ -170,7 +166,6 @@ html {
   color: white;
 }
 
-
 .nav-glass-bg {
   background: rgba(8, 16, 17, 0.26);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -186,14 +181,16 @@ html {
 }
 
 .png-border {
-  -webkit-filter: drop-shadow(5px 5px 0 rgb(255, 255, 255)) drop-shadow(-1px -1px 0 rgb(255, 255, 255));
-  filter: drop-shadow(3px 3px 3px rgb(255, 255, 255)) drop-shadow(-1px -1px 0 rgb(255, 255, 255));
+  -webkit-filter: drop-shadow(5px 5px 0 rgb(255, 255, 255))
+    drop-shadow(-1px -1px 0 rgb(255, 255, 255));
+  filter: drop-shadow(3px 3px 3px rgb(255, 255, 255))
+    drop-shadow(-1px -1px 0 rgb(255, 255, 255));
 }
 
 .quote-box {
   position: relative;
   /* Dark red background */
-  color: #FFFFFF;
+  color: #ffffff;
   /* White text color */
   font-size: 18px;
 }
@@ -222,7 +219,6 @@ html {
   z-index: 50;
 }
 
-
 .sponsors_card_bg {
   background: rgba(26, 8, 9, 0.36);
   border-radius: 16px;
@@ -231,7 +227,16 @@ html {
   -webkit-backdrop-filter: blur(9.6px);
 }
 
-.read-more{
-  background: rgb(28,9,10);
-  background: linear-gradient(180deg, rgb(28 9 10 / 23%) 0%, rgb(9 3 3 / 73%) 35%, rgb(0 0 0 / 92%) 84%);
+.read-more {
+  background: rgb(28, 9, 10);
+  background: linear-gradient(
+    180deg,
+    rgb(28 9 10 / 23%) 0%,
+    rgb(9 3 3 / 73%) 35%,
+    rgb(0 0 0 / 92%) 84%
+  );
+}
+
+.react-multiple-carousel__arrow {
+  display: none;
 }

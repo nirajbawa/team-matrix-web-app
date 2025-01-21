@@ -39,7 +39,7 @@ async function MembersCardContainer() {
             </div>
         )
     }
-    catch (error) {
+    catch {
         return <></>
     }
 }

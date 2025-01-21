@@ -1,45 +1,139 @@
-"use client"
-import React from 'react';
-import useHeroStore from '@/store/useHeroStore';
-import ProjectCard from '@/components/cards/ProjectCard';
-import sampleImage from "@/assets/images/sample-image.png"
-import { Card, CardContent } from "@/components/ui/card";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import Image from 'next/image';
-import BgTexture from "@/assets/images/project-texture.png"
+import React, { useRef, useState } from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import ProjectImage from "@/assets/images/project.webp";
+import ProjectSlidingCards from "@/components/cards/ProjectSlidingCards";
 
-
-interface ProjectCardsContainerProps {
-    data: any;
+interface Data {
+  image: unknown;
+  name: string;
 }
 
+function ProjectCardsContainer() {
+  const carouselRef = useRef<Carousel | null>(null); // Carousel reference
+  const [activeIndex, setActiveIndex] = useState<number>(0); // Track the active index
+  const [data, setData] = useState<Data[]>([
+    {
+      image: ProjectImage,
+      name: "BULL SHARK",
+    },
+    {
+      image: ProjectImage,
+      name: "BULL SHARK",
+    },
 
-function ProjectCardsContainer({ data }: ProjectCardsContainerProps) {
+    {
+      image: ProjectImage,
+      name: "BULL SHARK",
+    },
 
-    const scroll = useHeroStore((state: any) => state.scroll);
+    {
+      image: ProjectImage,
+      name: "RED SHARK",
+    },
+    {
+      image: ProjectImage,
+      name: "RED SHARK",
+    },
+    {
+      image: ProjectImage,
+      name: "RED SHARK",
+    },
+  ]);
 
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 3,
+      partialVisibilityGutter: 0,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      partialVisibilityGutter: 0,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      partialVisibilityGutter: 0,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      partialVisibilityGutter: 0,
+    },
+  };
 
-    return (
-        <div className={`w-full flex bg-black overflow-x-hidden  h-full min-h-svh justify-between`}>
-
-            <div className='text-white'>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio impedit eligendi voluptatibus adipisci, enim sint architecto excepturi voluptas vel vero saepe autem pariatur aspernatur debitis, provident aliquid, rem ipsam numquam. Maxime fugiat repellendus, blanditiis repellat earum, quam natus nobis voluptatibus minima sunt veniam illum inventore soluta nulla numquam optio iste perferendis harum? At placeat laborum molestiae sequi animi, vero dolorem fugit harum perferendis exercitationem, architecto minus, beatae laudantium itaque omnis reiciendis! Maiores porro deserunt provident laboriosam, optio sequi? Temporibus mollitia at ad modi atque debitis omnis harum et nesciunt eaque dolore vero eos assumenda natus laboriosam, inventore enim est. Quod id asperiores totam laborum debitis magnam similique vel, quam, nulla tempora iste sed ipsam odio repudiandae veniam! Eius, aspernatur? Ad voluptatibus dolores nihil officia rem aliquam expedita voluptatum quasi amet necessitatibus, eveniet quibusdam nesciunt corporis odit eum facere quos, aspernatur quaerat molestias ab, mollitia veritatis error. Alias ipsam ducimus labore doloremque voluptate, voluptates numquam! Molestias laboriosam excepturi doloremque sit ab temporibus, dignissimos repellat architecto a veritatis quaerat eligendi aperiam? Officia libero doloribus ducimus, cum totam neque corporis beatae voluptate eius iure sit dicta dolorum tempore exercitationem nostrum tempora aut hic magni sunt esse. Nisi ducimus voluptatibus sit recusandae odit? Iste nostrum dignissimos obcaecati velit reprehenderit numquam vel recusandae perferendis sed eum. Veniam eveniet deleniti atque dicta repellendus ratione, iure aut at cumque ex voluptates et! Nobis illo, tempora consequatur ex cumque nostrum pariatur nihil omnis autem consectetur, corrupti ipsa nesciunt, ab beatae alias quaerat non sequi in quisquam quo qui quos iste eos. Quam quidem esse facilis incidunt! Animi eius explicabo vitae vero blanditiis esse culpa beatae, maiores ipsum ea repellendus, facere consequuntur suscipit porro? Ea vel est quam, natus reiciendis quod pariatur dolorum eos impedit non vitae asperiores itaque corrupti unde repellat, mollitia nam, numquam eum quisquam ipsum atque?
+  return (
+    <div className="w-full h-full p-0 flex justify-center flex-col">
+      <div className="py-14">
+        <Carousel
+          ref={carouselRef}
+          additionalTransfrom={0}
+          arrows
+          autoPlaySpeed={3000}
+          centerMode={false} // Enable center mode for the middle slide
+          className="items-center flex px-24"
+          containerClass="container-with-dots"
+          itemClass=""
+          draggable={false}
+          focusOnSelect={false}
+          infinite={false} // Disable infinite looping
+          keyBoardControl
+          minimumTouchDrag={80}
+          pauseOnHover
+          renderArrowsWhenDisabled={false}
+          renderButtonGroupOutside={false}
+          renderDotsOutside={false}
+          responsive={responsive}
+          rewind={false} // Prevent rewind
+          rewindWithAnimation={false} // Prevent rewind animation
+          rtl={false}
+          shouldResetAutoplay
+          showDots={false}
+          slidesToSlide={1}
+          swipeable
+        >
+          {data.map((item, index) => (
+            <div
+              key={index}
+              className={`w-80 h-[30rem] flex items-center ${activeIndex + 2 === index ? "justify-start" : "justify-end"} text-white  `}
+            >
+              <ProjectSlidingCards
+                name={item.name}
+                image={item.image}
+                style={`${activeIndex + 1 === index ? "w-80 h-60 mb-[16rem]" : "w-60 h-44 mt-16"}`}
+              />
             </div>
-          
+          ))}
+        </Carousel>
+      </div>
 
-        
-          
-    
-
-        </div>
-    )
+      {/* Custom Buttons */}
+      <div className="mt-4 flex justify-center gap-4">
+        <button
+          onClick={() => {
+            carouselRef.current?.previous(0);
+            setActiveIndex((index) => (index - 1 >= 0 ? index - 1 : index));
+          }}
+          className="bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          Prev
+        </button>
+        <button
+          onClick={() => {
+            setActiveIndex((index) =>
+              index + 1 < data.length - 2 ? index + 1 : index
+            );
+            carouselRef.current?.next(0);
+          }}
+          className="bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export default ProjectCardsContainer;
