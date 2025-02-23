@@ -85,6 +85,7 @@ function CreateNewMemberDialog({ open, handleOpen, fetchData }: CreateNewMemberD
       const res = await axios.post<ApiResponse>(`/api/admin/settings/members`, payload);
       const data = res.data;
       toast({
+        className: "dark:bg-black",
         title: "New Member Added",
         description: data.message,
         variant: "default",

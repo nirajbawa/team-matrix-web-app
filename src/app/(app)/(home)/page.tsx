@@ -1,6 +1,8 @@
-import Footer from "./components-old/Footer";
+import FooterMain from "./components/FooterMain";
 import HeroSection from "./components/HeroSection";
+import OurStories from "./components/OurStories";
 import ProjectsMain from "./components/ProjectsMain";
+import Sponsors from "./components/Sponsors";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 60;
@@ -11,12 +13,18 @@ export default async function Home() {
       <section id="hero">
         <HeroSection />
       </section>
-      <div className="w-full h-full">
-        <section id="about">
-          <ProjectsMain />
-        </section>
-      </div>
-      <Footer />
+      <section id="projects">
+        <ProjectsMain />
+      </section>
+      <section id="our-stories">
+        <OurStories />
+      </section>
+      <section id="sponsors">
+        <Sponsors />
+      </section>
+      <section id="footer">
+        <FooterMain />
+      </section>
     </div>
   );
 }

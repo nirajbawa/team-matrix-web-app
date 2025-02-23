@@ -55,6 +55,7 @@ function VerifyCodeForm({tokenPayload, token}:LoginFormProps) {
             const res = await axios.post<ApiResponse>(`/api/auth/verify`, payload);
             const data = res.data;
             toast({
+                className: "dark:bg-black",
                 title: "Member Sign Up Completed",
                 description: data.message,
                 variant: "default",

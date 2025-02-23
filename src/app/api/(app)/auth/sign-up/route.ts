@@ -99,7 +99,7 @@ export async function POST(req: NextRequest) {
             },
             { status: 201 }
         );
-    } catch (error) {
+    } catch {
         return Response.json(
             {
                 success: false,

@@ -64,6 +64,7 @@ function LoginForm({tokenPayload, token}:LoginFormProps) {
             const res = await axios.post<ApiResponse>(`/api/auth/sign-up`, payload);
             const data = res.data;
             toast({
+                className: "dark:bg-black",
                 title: "Invitation Sended Successfully",
                 description: data.message,
                 variant: "default",

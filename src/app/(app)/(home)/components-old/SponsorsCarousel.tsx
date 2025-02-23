@@ -1,5 +1,5 @@
-"use client"
-import * as React from "react"
+"use client";
+import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -9,11 +9,11 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 
-interface SponsorsCarouselProps{
+interface SponsorsCarouselProps {
   data: any;
 }
 
-function SponsorsCarousel({data}:SponsorsCarouselProps) {
+function SponsorsCarousel({ data }: SponsorsCarouselProps) {
   return (
     <Carousel
       opts={{
@@ -23,26 +23,33 @@ function SponsorsCarousel({data}:SponsorsCarouselProps) {
       plugins={[
         Autoplay({
           delay: 2000,
-          stopOnInteraction: false, 
+          stopOnInteraction: false,
         }),
       ]}
     >
       <CarouselContent>
-        {data.map((item:any, index:number) => (
-          <CarouselItem key={index} className="md:basis-1/2 bg-transparent lg:basis-1/3">
+        {data.map((item: any, index: number) => (
+          <CarouselItem
+            key={index}
+            className="md:basis-1/2 bg-transparent lg:basis-1/3"
+          >
             <div className="p-14 sm:p-1">
               <Card className="rounded-full bg-white border-none shadow-none">
-                <CardContent className="flex rounded-full aspect-square items-center justify-center p-6" style={{ background: `url(${item.image})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
-                 
-                </CardContent>
+                <CardContent
+                  className="flex rounded-full aspect-square items-center justify-center p-6"
+                  style={{
+                    background: `url(${item.image})`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                  }}
+                ></CardContent>
               </Card>
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
     </Carousel>
-  )
+  );
 }
-
 
 export default SponsorsCarousel;

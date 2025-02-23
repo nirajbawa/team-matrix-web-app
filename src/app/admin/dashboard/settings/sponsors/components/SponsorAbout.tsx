@@ -46,6 +46,7 @@ function SponsorAbout() {
       const res = await axios.post<ApiResponse>(`/api/admin/settings/sponsors-about`, payload);
       const data = res.data;
       toast({
+        className: "dark:bg-black",
         title: "Updated",
         description: data.message,
         variant: "default",
@@ -84,6 +85,7 @@ function SponsorAbout() {
       const res = await axios.post<ApiResponse>(`/api/admin/settings/sponsors-about`, payload);
       const data = res.data;
       toast({
+        className: "dark:bg-black",
         title: "Updated",
         description: data.message,
         variant: "default",

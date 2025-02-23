@@ -40,13 +40,14 @@ function InvitationForm() {
             const res = await axios.post<ApiResponse>(`/api/admin/add-user`, {email: values.email});
             const data = res.data;
             toast({
+                className: "dark:bg-black",
                 title: "Invitation Sended Successfully",
                 description: data.message,
                 variant: "default",
             });
             form.resetField("email")
         }
-        catch (error) {
+        catch{
             toast({
                 title: "Invitation Failed",
                 description: "Failed to send invitation mail",

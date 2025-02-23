@@ -60,6 +60,7 @@ function LoginForm() {
         if (result?.error) {
             if (result.error === "CredentialsSignin") {
                 toast({
+                    className: "dark:bg-black",
                     title: "Login Failed",
                     description: "Incorrect username or password",
                     variant: "destructive",

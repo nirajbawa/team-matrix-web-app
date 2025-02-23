@@ -88,6 +88,7 @@ function EditMemberDialog({ open, handleOpen, data, fetchData }: EditMemberDialo
         const res = await axios.patch<ApiResponse>(`/api/admin/settings/members/${id}`, payload);
         const data = res.data;
         toast({
+          className: "dark:bg-black",
           title: "Member Updated",
           description: data.message,
           variant: "default",
@@ -140,6 +141,7 @@ function EditMemberDialog({ open, handleOpen, data, fetchData }: EditMemberDialo
         const res = await axios.delete<ApiResponse>(`/api/admin/settings/members/${id}`);
         const data = res.data;
         toast({
+          className: "dark:bg-black",
           title: "Member Deleted",
           description: data.message,
           variant: "default",

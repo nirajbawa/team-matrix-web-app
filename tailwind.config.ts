@@ -9,6 +9,10 @@ const config: unknown = withMT({
   ],
   theme: {
     extend: {
+      screens: {
+        "3xl": "1600px",
+        "md-xs": "1142px",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

@@ -83,6 +83,7 @@ function CreateNewSponsorDialog({ open, handleOpen, fetchData }: CreateNewSponso
         const res = await axios.post<ApiResponse>(`/api/admin/settings/sponsors`, payload);
         const data = res.data;
         toast({
+          className: "dark:bg-black",
           title: "New Sponsor Added",
           description: data.message,
           variant: "default",
@@ -169,7 +170,6 @@ function CreateNewSponsorDialog({ open, handleOpen, fetchData }: CreateNewSponso
                     <div className="w-72">
                       <Select label="Select Section" onChange={field.onChange} defaultValue={field.value}>
                         <Option value="1">section 1</Option>
-                        <Option value="2">section 2</Option>
                       </Select>
                     </div>
                   )}

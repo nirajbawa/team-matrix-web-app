@@ -1,8 +1,8 @@
-'use client';
-import AOS from 'aos';
+"use client";
+import AOS from "aos";
 
-import 'aos/dist/aos.css';
-import { Fragment, useEffect } from 'react';
+import "aos/dist/aos.css";
+import { Fragment, useEffect } from "react";
 
 const AOSProvider = ({
   children,
@@ -14,7 +14,7 @@ const AOSProvider = ({
       offset: 0, // offset (in px) from the original trigger point
       delay: 50, // values from 0 to 3000, with step 50ms
       duration: 1000,
-      once: false,
+      once: true,
       mirror: false,
     });
   }, []);
