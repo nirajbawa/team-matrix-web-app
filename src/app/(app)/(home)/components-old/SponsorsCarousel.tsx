@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-
 interface SponsorsCarouselProps {
   data: any;
 }
@@ -24,7 +23,8 @@ function SponsorsCarousel({ data }: SponsorsCarouselProps) {
         Autoplay({
           delay: 2000,
           stopOnInteraction: false,
-        }),
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        }) as unknown as any,
       ]}
     >
       <CarouselContent>
