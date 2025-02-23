@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import AuthProvider from "@/providers/AuthProvider";
+import AuthProvider from "../providers/AuthProvider";
 import ThemeProvider from "@/providers/ThemeProvider";
 
 const geistSans = localFont({
