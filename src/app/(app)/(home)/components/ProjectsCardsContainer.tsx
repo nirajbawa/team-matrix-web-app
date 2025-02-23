@@ -115,10 +115,10 @@ function ProjectCardsContainer({ data }: ProjectCardsContainerProps) {
       <div
         data-aos="slide-up"
         data-aos-duration="4000"
-        className={`md:w-1/3 h-[18rem] top-[-6rem] text-lg relative z-10 md:left-[40%] lg:left-[50rem] xl:left-[34%] 2xl:left-[34%]  bg-white text-black p-10 text-center hidden md-xs:flex ${varela_round.className}`}
+        className={`md:w-1/3 h-[18rem] top-[-6rem] text-lg relative z-10 md:left-[40%] lg:left-[50rem] bg-[#323131] dark:bg-white xl:left-[34%] 2xl:left-[34%]   text-white dark:text-black p-10 text-center hidden md-xs:flex ${varela_round.className}`}
       >
         <button
-          className="bg-red-800  w-20 absolute animate-bounce h-20 rounded-full top-[6rem] -left-12 dark:text-white  text-4xl carousel-glass-bg"
+          className="bg-red-800  w-20 absolute animate-bounce h-20 rounded-full top-[6rem] -left-12 dark:text-white  text-black text-4xl carousel-glass-bg"
           onClick={() => {
             console.log("hello");
             carouselRef.current?.previous(0);
@@ -133,7 +133,7 @@ function ProjectCardsContainer({ data }: ProjectCardsContainerProps) {
           {boxText}
         </p>
         <button
-          className="bg-red-800 w-20 absolute h-20  animate-bounce rounded-full top-[6rem] -right-12 dark:text-white text-4xl carousel-glass-bg"
+          className="bg-red-800 w-20 absolute h-20  animate-bounce rounded-full top-[6rem]  -right-12 dark:text-white text-black text-4xl carousel-glass-bg"
           onClick={() => {
             setActiveIndex((index) =>
               index + 1 < data.length - 2 ? index + 1 : index

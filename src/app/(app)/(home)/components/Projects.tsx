@@ -17,7 +17,7 @@ interface ProjectProps {
 
 export default function Projects({ data }: ProjectProps) {
   return (
-    <div className="w-full min-h-[60rem] max-h-[65rem] h-[65rem]  py-16">
+    <div className="w-full min-h-[50rem] md:max-h-[65rem] md:h-[58rem]  py-16  md:pb-0">
       <h1
         className={`w-full text-center uppercase font-extrabold text-4xl ${league_spartan.className}`}
       >

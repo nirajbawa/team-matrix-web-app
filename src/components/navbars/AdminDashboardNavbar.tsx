@@ -9,11 +9,13 @@ import {
 } from "@material-tailwind/react";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
-import useThemeStore from "@/store/useTheme";
+import useTheme from "@/hooks/useTheme";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
 
 export function AdminDashboardNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
-  const theme = useThemeStore((state) => state.theme);
+  const [theme, changeTheme] = useTheme();
 
   React.useEffect(() => {
     window.addEventListener(
@@ -71,6 +73,16 @@ export function AdminDashboardNavbar() {
           App
         </Link>
       </Typography>
+      <div
+        className="hover:bg-blue-gray-50 dark:hover:bg-[#171717] p-2  transition-all rounded-md cursor-pointer duration-150 ease-linear"
+        onClick={changeTheme}
+      >
+        {theme == "light" ? (
+          <DarkModeIcon fontSize="large" />
+        ) : (
+          <LightModeIcon fontSize="large" />
+        )}
+      </div>
     </ul>
   );
 

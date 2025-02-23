@@ -1,9 +1,12 @@
+"use client";
 import React from "react";
 import CollegeLogo from "@/assets/images/college-logo.png";
 import Image from "next/image";
 import { Open_Sans, Arvo } from "next/font/google";
 import localFont from "next/font/local";
 import FooterBackground from "@/assets/images/footer-bg.png";
+import useTheme from "@/hooks/useTheme";
+import CollegeLogoDark from "@/assets/images/college-logo-dark.png";
 
 const open_sans = Open_Sans({
   display: "swap",
@@ -23,6 +26,7 @@ const norwester = localFont({
 });
 
 function FooterAbout() {
+  const [theme] = useTheme();
   return (
     <div
       className="w-full flex flex-col md:flex-row py-10 md:px-20 items-center justify-center md:bg-cover]"
@@ -32,7 +36,7 @@ function FooterAbout() {
     >
       <div className="lg:px-10 flex justify-center">
         <Image
-          src={CollegeLogo}
+          src={theme == "light" ? CollegeLogoDark : CollegeLogo}
           className="w-80 md:w-96 h-44"
           alt="img"
           width={500}
@@ -40,7 +44,7 @@ function FooterAbout() {
         />
       </div>
 
-      <div className="w-1 bg-white h-48 rounded-md hidden md:flex"></div>
+      <div className="w-1 dark:bg-white h-48 rounded-md hidden md:flex bg-black"></div>
       <div className="w-full md:w-[35%] flex justify-center items-center flex-col pt-5 px-5 xl:pl-8 xl:pt-0">
         <p
           className={`w-full text-center capitalize md:text-left md:text-[1.1rem] ${open_sans.className} `}

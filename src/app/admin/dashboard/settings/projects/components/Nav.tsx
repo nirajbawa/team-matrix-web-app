@@ -15,7 +15,7 @@ function Nav({ fetchData }: NavProps) {
     <>
       <nav className="w-full h-20 pt-10 pr-10 flex justify-end items-center">
         <div
-          className="hover:bg-blue-gray-50 ease-in-out dark:hover:text-gray-800 transition-all duration-150 p-2 cursor-pointer rounded-full"
+          className="hover:bg-blue-gray-50 ease-in-out dark:hover:text-gray-800 dark:text-white transition-all duration-150 p-2 cursor-pointer rounded-full"
           onClick={handleOpen}
         >
           <ControlPointIcon />

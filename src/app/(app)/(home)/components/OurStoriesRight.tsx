@@ -29,7 +29,7 @@ function OurStoriesRight({ currentItem }: OurStoriesRightProps) {
         }}
       ></div>
 
-      <div className="w-full pb-10 px-10 text-center h-full">
+      <div className="w-full pb-10 px-10 text-center h-full text-white">
         {parse(currentItem ?? "")}
       </div>
       <div

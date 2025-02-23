@@ -106,10 +106,10 @@ function ProjectsMobileCarousel({ data }: ProjectsMobileCarouselProps) {
         <div
           data-aos="slide-up"
           data-aos-duration="4000"
-          className={`w-[85%] md:w-2/3 h-full min-h-[22rem] text-lg bg-white text-black p-5 justify-center text-center flex  md-xs:hidden ${varela_round.style}`}
+          className={`w-[85%] md:w-2/3 h-full min-h-[22rem] text-lg bg-[#323131] dark:bg-white text-black p-5 justify-center text-center flex  md-xs:hidden ${varela_round.style}`}
         >
           <p
-            className={`transition-opacity ${boxText ? "opacity-100" : "opacity-5"} duration-300 ease-in-out`}
+            className={`transition-opacity ${boxText ? "opacity-100" : "opacity-5"} duration-300 ease-in-out text-white dark:text-black`}
           >
             {boxText}
           </p>

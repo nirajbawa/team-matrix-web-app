@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import MatrixLogo from "@/assets/images/footer-logo.jpg";
 import Image from "next/image";
@@ -9,6 +10,9 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Link from "next/link";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import useTheme from "@/hooks/useTheme";
 
 const open_sans = Open_Sans({
   display: "swap",
@@ -22,6 +26,8 @@ const norwester = localFont({
 });
 
 function Footer() {
+  const [theme, changeTheme] = useTheme();
+
   return (
     <footer className="w-full py-10 px-16 md:px-8 lg:px-28 lg:pb-5 bg-white text-black border-t-8 border-[#cb1027]">
       <div className="w-full flex flex-col md:flex-row md:items-center md:justify-between">
@@ -105,13 +111,29 @@ function Footer() {
       <div className="mt-14 w-full md:flex md:justify-between md:items-center md:flex-row-reverse md:mt-12 lg:mt-16">
         <ul className="w-full flex gap-x-5 text-xl justify-center items-center md:justify-end">
           <li>
-            <InstagramIcon fontSize="large" />
+            <Link href="">
+              <InstagramIcon fontSize="large" />
+            </Link>
           </li>
           <li>
-            <GitHubIcon fontSize="large" />
+            <Link href="">
+              <GitHubIcon fontSize="large" />
+            </Link>
           </li>
           <li>
-            <LinkedInIcon fontSize="large" />
+            <Link href="">
+              <LinkedInIcon fontSize="large" />
+            </Link>
+          </li>
+          <li
+            className="hover:bg-blue-gray-50 p-2 delay-200 transition-all rounded-md cursor-pointer duration-150 ease-in-out"
+            onClick={changeTheme}
+          >
+            {theme == "light" ? (
+              <DarkModeIcon fontSize="large" />
+            ) : (
+              <LightModeIcon fontSize="large" />
+            )}
           </li>
         </ul>
         <div

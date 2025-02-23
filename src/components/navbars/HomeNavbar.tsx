@@ -121,10 +121,10 @@ function HomeNavbar() {
             </li>
 
             <li
-              className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "members" ? "bg-white text-black" : ""}`}
+              className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "our-stories" ? "bg-white text-black" : ""}`}
             >
-              <Link href="#members" onClick={() => setScroll(true)}>
-                MEMBERS
+              <Link href="#our-stories" onClick={() => setScroll(true)}>
+                STORIES
               </Link>
             </li>
           </ul>
@@ -133,12 +133,12 @@ function HomeNavbar() {
           <div
             data-aos="fade-down"
             data-aos-duration="4000"
-            className={`w-20 h-16 mt-10 md:w-36 md:h-28 md:mt-24`}
+            className={`w-20 h-16 mt-10 md:w-36 md:h-28 md:mt-24 cursor-pointer`}
           >
             <Image
               hidden={isOpen}
               onClick={() => {
-                router.replace("#hero");
+                router.replace("/");
               }}
               src={MatrixLogo}
               fill={true}
@@ -174,7 +174,7 @@ function HomeNavbar() {
             <li
               className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white hover:text-black px-3 py-2 hover:text-black11 ${activeSection === "login" ? "bg-white text-black" : ""}`}
             >
-              <Link href="#login" onClick={() => setScroll(true)}>
+              <Link href="/login" onClick={() => setScroll(true)}>
                 SIGN IN
               </Link>
             </li>
@@ -182,8 +182,8 @@ function HomeNavbar() {
             <li
               className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white hover:text-black px-3 py-2 hover:text-black11 ${activeSection === "recruitment" ? "bg-white text-black" : ""}`}
             >
-              <Link href="#recruitment" onClick={() => setScroll(true)}>
-                RECRUITMENT
+              <Link href="/members" onClick={() => setScroll(true)}>
+                MEMBERS
               </Link>
             </li>
           </ul>

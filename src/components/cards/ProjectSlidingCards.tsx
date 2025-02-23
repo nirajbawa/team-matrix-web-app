@@ -32,7 +32,7 @@ function ProjectSlidingCards({
         }}
       ></div>
       <div
-        className={`min-w-40  max-w-full z-40 text-center uppercase ${lexend_giga.style} tracking-wide ${isMiddle ? "font-extrabold text-2xl p-3 lg:p-5 border-2 border-[#ff2c37]" : "text-xl"}`}
+        className={`min-w-40  max-w-full z-40 text-center uppercase ${lexend_giga.style} dark:text-white text-gray-900 tracking-wide ${isMiddle ? "font-extrabold text-2xl p-3 lg:p-5 border-2 border-[#ff2c37]" : "text-xl"}`}
       >
         {name}
       </div>
