@@ -21,16 +21,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider />
-        <AuthProvider>
+    <AuthProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <ThemeProvider />
+
           {children}
           <Toaster />
-        </AuthProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </AuthProvider>
   );
 }
