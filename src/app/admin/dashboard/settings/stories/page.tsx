@@ -1,9 +1,9 @@
+"use client";
 import React from "react";
-import StoriesMain from "./components/StoriesMain";
 import dynamic from "next/dynamic";
 
 const DynamicComponentWithNoSSR = dynamic(
-  () => import("./components/Stories"),
+  () => import("./components/StoriesMain"),
   { ssr: false }
 );
 
