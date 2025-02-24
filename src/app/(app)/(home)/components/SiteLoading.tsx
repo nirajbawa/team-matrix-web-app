@@ -3,10 +3,13 @@ import React, { useEffect, useRef } from "react";
 import BackgroundAni from "@/assets/images/siteloading-bg-ani.gif";
 import Image from "next/image";
 import RocketImage from "@/assets/images/rocket.png";
+import useLoadAniStore from "@/store/useLoadAniStore";
 
 function SiteLoading() {
   const mainDiv = useRef<HTMLDivElement | null>(null);
   const rocketDiv = useRef<HTMLDivElement | null>(null);
+  const animation = useLoadAniStore((state) => state.animation);
+  const setAnimation = useLoadAniStore((state) => state.setAnimation);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -18,6 +21,7 @@ function SiteLoading() {
         rocketDiv.current?.classList.toggle("siteAnimateOnload");
         setTimeout(() => {
           mainDiv.current?.remove();
+          setAnimation(true);
         }, 4500);
       }, 200);
     }
@@ -25,7 +29,7 @@ function SiteLoading() {
 
   return (
     <div
-      className="w-full h-svh flex items-center justify-center fixed z-[100] bg-black bg-no-repeat bg-cover"
+      className={`w-full h-svh flex items-center justify-center z-[100] bg-black bg-no-repeat bg-cover ${animation ? "hidden" : "fixed"}`}
       style={{
         backgroundImage: `url(${BackgroundAni.src})`,
       }}

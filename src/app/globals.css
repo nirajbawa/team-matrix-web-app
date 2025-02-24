@@ -255,11 +255,11 @@ html {
 
 .siteAnimateOnload {
   position: relative; /* Make sure the element has a position */
-  animation: siteAni 5s linear forwards;
+  animation: siteAni 2s linear forwards;
 }
 
 .siteOverlay {
-  animation: overlayAni 5s linear forwards;
+  animation: overlayAni 2s linear forwards;
 }
 
 @keyframes siteAni {
