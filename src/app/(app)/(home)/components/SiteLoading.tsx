@@ -1,9 +1,8 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import BackgroundAni from "@/assets/images/siteloading-bg-ani.gif";
-import dynamic from "next/dynamic";
-
-// const AnimationPlayer = dynamic(() => import("./HeroSection"), { ssr: false });
+import Image from "next/image";
+import RocketImage from "@/assets/images/rocket.png";
 
 function SiteLoading() {
   const mainDiv = useRef<HTMLDivElement | null>(null);
@@ -32,7 +31,9 @@ function SiteLoading() {
       }}
       ref={mainDiv}
     >
-      <div ref={rocketDiv}></div>
+      <div ref={rocketDiv}>
+        <Image src={RocketImage} width={500} height={500} alt="rocket" />
+      </div>
     </div>
   );
 }
