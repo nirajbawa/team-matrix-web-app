@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import HomeNavbar from "@/components/navbars/HomeNavbar";
-import Script from "next/script";
 import ScriptLoader from "./(home)/components/ScriptLoader";
+import Head from "next/head";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Team Matrix Robotics Club",
