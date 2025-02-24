@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HomeNavbar from "@/components/navbars/HomeNavbar";
 import Scripts from "./(home)/components/Scripts";
+import SiteLoading from "./(home)/components/SiteLoading";
 
 export const metadata: Metadata = {
   title: "Team Matrix Robotics Club",
@@ -41,6 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
+      <SiteLoading />
       <div className="w-full overflow-hidden dark:bg-black">
         <HomeNavbar />
         {children}
