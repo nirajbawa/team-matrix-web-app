@@ -64,7 +64,7 @@ const HeroSection = () => {
           />
         </Link>
       </AOSProvider>
-      <Script id="script" strategy="afterInteractive">
+      <Script id="script">
         {`VANTA.NET({
                     el: "#main-header-bg",
                     mouseControls: true,
