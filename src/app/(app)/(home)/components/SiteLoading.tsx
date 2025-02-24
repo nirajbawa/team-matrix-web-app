@@ -1,30 +1,11 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import LoadingAnimation from "@/assets/lotties/site-loading.json";
-// import LottiefilePlayer from "@/components/players/LottiefilePlayer";
 import BackgroundAni from "@/assets/images/siteloading-bg-ani.gif";
-import { useLottie } from "lottie-react";
+import dynamic from "next/dynamic";
+
+const AnimationPlayer = dynamic(() => import("./HeroSection"), { ssr: false });
 
 function SiteLoading() {
-  const lottieProps = {
-    loop: true,
-    autoplay: true,
-    animationData: LoadingAnimation,
-    height: "100%",
-    width: "30rem",
-  };
-
-  const defaultOptions = {
-    loop: lottieProps.loop,
-    autoplay: lottieProps.autoplay,
-    animationData: lottieProps.animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
-  const { View } = useLottie(defaultOptions);
-
   // const mainDiv = useRef<HTMLDivElement | null>(null);
   // const rocketDiv = useRef<HTMLDivElement | null>(null);
 
@@ -50,7 +31,7 @@ function SiteLoading() {
         backgroundImage: `url(${BackgroundAni.src})`,
       }}
     >
-      <div className="h-full w-[30rem]">{View}</div>
+      <AnimationPlayer />
     </div>
   );
 }
