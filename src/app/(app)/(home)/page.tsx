@@ -13,9 +13,9 @@ export default async function Home() {
       <section id="hero">
         <HeroSection />
       </section>
-      <section id="projects">
+      {/* <section id="projects">
         <ProjectsMain />
-      </section>
+      </section> */}
       {/* <section id="our-stories">
         <OurStories />
       </section>
