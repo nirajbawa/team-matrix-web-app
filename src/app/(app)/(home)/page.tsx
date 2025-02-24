@@ -1,5 +1,5 @@
 import FooterMain from "./components/FooterMain";
-import HeroMain from "./components/HeroMain";
+import HeroSection from "./components/HeroSection";
 import OurStories from "./components/OurStories";
 import ProjectsMain from "./components/ProjectsMain";
 import Sponsors from "./components/Sponsors";
@@ -11,7 +11,7 @@ export default async function Home() {
   return (
     <div className="w-full">
       <section id="hero">
-        <HeroMain/>
+        <HeroSection />
       </section>
       <section id="projects">
         <ProjectsMain />
