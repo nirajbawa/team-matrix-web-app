@@ -17,16 +17,18 @@ function SiteLoading() {
   const rocketDiv = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      mainDiv.current?.classList.toggle("siteOverlay");
-    }, 2000);
-
-    setTimeout(() => {
-      rocketDiv.current?.classList.toggle("siteAnimateOnload");
+    if (typeof window !== "undefined") {
       setTimeout(() => {
-        mainDiv.current?.remove();
-      }, 4500);
-    }, 200);
+        mainDiv.current?.classList.toggle("siteOverlay");
+      }, 2000);
+
+      setTimeout(() => {
+        rocketDiv.current?.classList.toggle("siteAnimateOnload");
+        setTimeout(() => {
+          mainDiv.current?.remove();
+        }, 4500);
+      }, 200);
+    }
   }, []);
 
   return (
