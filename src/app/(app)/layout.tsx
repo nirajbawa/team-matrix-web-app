@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import HomeNavbar from "@/components/navbars/HomeNavbar";
-import Script from "next/script";
 import ScriptLoader from "./(home)/components/ScriptLoader";
 
 export const metadata: Metadata = {
