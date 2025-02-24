@@ -47,7 +47,7 @@ function MobileMenu({
             </Link>
           </li>
           <li className="w-full text-white text-center h-16 flex justify-center items-center">
-            <Link href="#members" onClick={toggleMenu}>
+            <Link href="/members" onClick={toggleMenu}>
               MEMBERS
             </Link>
           </li>
