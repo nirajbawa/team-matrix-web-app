@@ -2,8 +2,7 @@ import StoriesModel from "@/models/Stories";
 import dbConnect from "./dbConnect";
 
 export async function createStories() {
-  dbConnect();
-  console.log("hello");
+  await dbConnect();
   const docCount = await StoriesModel.countDocuments({});
   if (docCount === 0) {
     for (let i = 0; i < 12; i++) {

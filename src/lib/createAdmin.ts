@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 import UserModel from "../models/User";
 
 export async function createAdmin() {
-  dbConnect();
+  await dbConnect();
   const password = process.env.ADMIN_PASSWORD || "1234578";
   const hashedPassword = await bcrypt.hash(password, 10);
   const users = await UserModel.find({ role: "Admin" });
