@@ -13,23 +13,26 @@ function SiteLoading() {
     width: "30rem",
   };
 
+  const [isClient, setIsClient] = React.useState(false);
+
   const mainDiv = useRef<HTMLDivElement | null>(null);
   const rocketDiv = useRef<HTMLDivElement | null>(null);
 
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     setTimeout(() => {
-  //       mainDiv.current?.classList.toggle("siteOverlay");
-  //     }, 2000);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setTimeout(() => {
+        mainDiv.current?.classList.toggle("siteOverlay");
+      }, 2000);
 
-  //     setTimeout(() => {
-  //       rocketDiv.current?.classList.toggle("siteAnimateOnload");
-  //       setTimeout(() => {
-  //         mainDiv.current?.remove();
-  //       }, 4500);
-  //     }, 200);
-  //   }
-  // }, []);
+      setTimeout(() => {
+        rocketDiv.current?.classList.toggle("siteAnimateOnload");
+        setTimeout(() => {
+          mainDiv.current?.remove();
+        }, 4500);
+      }, 200);
+    }
+    setIsClient(true);
+  }, []);
 
   return (
     <div
@@ -40,13 +43,15 @@ function SiteLoading() {
       ref={mainDiv}
     >
       <div ref={rocketDiv}>
-        <LottiefilePlayer
-          loop={lottieProps.loop}
-          autoplay={lottieProps.autoplay}
-          animationData={lottieProps.animationData}
-          height={lottieProps.height}
-          width={lottieProps.width}
-        />
+        {isClient ? (
+          <LottiefilePlayer
+            loop={lottieProps.loop}
+            autoplay={lottieProps.autoplay}
+            animationData={lottieProps.animationData}
+            height={lottieProps.height}
+            width={lottieProps.width}
+          />
+        ) : null}
       </div>
     </div>
   );
