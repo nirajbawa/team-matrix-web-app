@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Lottie from "react-lottie";
 
 interface lottieProps {
@@ -17,6 +17,12 @@ const LottiefilePlayer = ({
   height,
   width,
 }: lottieProps) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Ensure it only renders in the browser
+  }, []);
+
   const defaultOptions = {
     loop: loop,
     autoplay: autoplay,
@@ -26,14 +32,15 @@ const LottiefilePlayer = ({
     },
   };
 
-  return (
+  // Only render Lottie after confirming it's the client
+  return isClient ? (
     <Lottie
       options={defaultOptions}
       isClickToPauseDisabled={true}
       height={height}
       width={width}
     />
-  );
+  ) : null;
 };
 
 export default LottiefilePlayer;
