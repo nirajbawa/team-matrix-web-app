@@ -42,11 +42,11 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <ScriptLoader />
       <div className="w-full overflow-hidden dark:bg-black">
         <HomeNavbar />
         {children}
       </div>
+      <ScriptLoader />
     </>
   );
 }
