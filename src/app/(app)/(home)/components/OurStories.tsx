@@ -10,13 +10,13 @@ const league_spartan = League_Spartan({
 });
 
 const fetchData = async (): Promise<Stories[]> => {
-  await dbConnect();
   const data = (await StoriesModel.find({})) as Stories[];
   const stories = JSON.stringify(data);
   return JSON.parse(stories);
 };
 
 async function OurStories() {
+  await dbConnect();
   const data = await fetchData();
 
   return (
