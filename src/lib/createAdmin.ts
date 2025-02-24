@@ -24,6 +24,6 @@ export async function createAdmin() {
   } catch {}
 }
 
-// setTimeout(() => {
-//   createAdmin();
-// }, 5000);
+
+createAdmin();
+

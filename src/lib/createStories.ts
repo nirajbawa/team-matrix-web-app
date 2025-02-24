@@ -1,4 +1,4 @@
-import StoriesModel from "@/models/Stories";
+import StoriesModel from "../models/Stories";
 import dbConnect from "./dbConnect";
 
 export async function createStories() {
@@ -18,6 +18,5 @@ export async function createStories() {
   } catch {}
 }
 
-// setTimeout(() => {
-//   createStories();
-// }, 5000);
+
+createStories();
