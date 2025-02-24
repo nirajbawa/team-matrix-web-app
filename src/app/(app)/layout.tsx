@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      {/* <SiteLoading /> */}
+      <SiteLoading />
       <div className="w-full overflow-hidden dark:bg-black">
         <HomeNavbar />
         {children}
