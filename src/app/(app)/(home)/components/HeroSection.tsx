@@ -31,29 +31,23 @@ const HeroSection = () => {
       })();
     } catch {}
 
-    // Initialize Vanta effect after scripts load
-    if (typeof window !== "undefined") {
-      const checkVanta = setInterval(() => {
-        if (window.VANTA) {
-          clearInterval(checkVanta);
-          window.VANTA.NET({
-            el: mainRef.current,
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.0,
-            minWidth: 200.0,
-            scale: 1.0,
-            scaleMobile: 1.0,
-            color: 0xff0000,
-            points: 7.0,
-            maxDistance: 18.0,
-            spacing: 20.0,
-            showDots: false,
-            backgroundAlpha: 0,
-          });
-        }
-      }, 500);
+    if (typeof window !== "undefined" && window.VANTA) {
+      window.VANTA.NET({
+        el: mainRef.current,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0xff0000,
+        points: 7.0,
+        maxDistance: 18.0,
+        spacing: 20.0,
+        showDots: false,
+        backgroundAlpha: 0,
+      });
     }
   }, []);
 
