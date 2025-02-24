@@ -22,7 +22,7 @@ function SiteLoading() {
         setTimeout(() => {
           mainDiv.current?.remove();
           setAnimation(true);
-        }, 4500);
+        }, 4000);
       }, 200);
     }
   }, []);
