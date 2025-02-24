@@ -16,12 +16,12 @@ export default async function Home() {
       <section id="projects">
         <ProjectsMain />
       </section>
-      <section id="our-stories">
+      {/* <section id="our-stories">
         <OurStories />
       </section>
       <section id="sponsors">
         <Sponsors />
-      </section>
+      </section> */}
       <section id="footer">
         <FooterMain />
       </section>
