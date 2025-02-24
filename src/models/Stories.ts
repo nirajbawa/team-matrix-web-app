@@ -24,7 +24,7 @@ const StoriesSchema: Schema<Stories> = new mongoose.Schema({
 });
 
 const StoriesModel =
-  (mongoose.models.stories as mongoose.Model<Stories>) ||
+  mongoose.models["stories"] ||
   mongoose.model<Stories>("stories", StoriesSchema);
 
 export default StoriesModel;
