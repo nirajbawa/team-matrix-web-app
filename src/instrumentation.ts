@@ -1,4 +1,4 @@
 export async function register() {
   import("./lib/createAdmin");
-  import("./lib/createStories");
+  // import("./lib/createStories");
 }
