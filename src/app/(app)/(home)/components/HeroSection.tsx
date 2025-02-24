@@ -3,13 +3,22 @@ import Link from "next/link";
 import Header from "../components/Header";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AOSProvider from "@/components/providers/AOSProvider";
 import ArrowAnimation from "@/assets/lotties/arrow-animation.json";
 import LottiefilePlayer from "@/components/players/LottiefilePlayer";
-import VantaProvider from "@/providers/VantaProvider";
+import useHeroStore from "@/store/useHeroStore";
+import { useEffect } from "react";
+import axios from "axios";
+import { ApiResponse } from "@/types/ApiResponse";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import dynamic from "next/dynamic";
+
+const Scripts = dynamic(() => import("./VantaLoader"), { ssr: false });
 
 const HeroSection = () => {
+  const scroll = useHeroStore((state) => state.scroll);
+  const setScroll = useHeroStore((state) => state.setScroll);
+
   const lottieProps = {
     loop: true,
     autoplay: true,
@@ -18,8 +27,19 @@ const HeroSection = () => {
     width: "5rem",
   };
 
+  useEffect(() => {
+    try {
+      (async () => {
+        await axios.post<ApiResponse>("/api/visitors");
+      })();
+    } catch {}
+  }, []);
+
   return (
-    <VantaProvider>
+    <div
+      id="main-header-bg"
+      className={`w-full  ${scroll ? "h-[95vh] md:h-[110vh]" : "h-[95vh] md:h-[100vh]"} bg-no-repeat bg-cover flex bg-[#050505] align-middle pb-5 items-center flex-col lg:bg-fixed`}
+    >
       <AOSProvider>
         <Header />
         <div
@@ -46,7 +66,8 @@ const HeroSection = () => {
           />
         </Link>
       </AOSProvider>
-    </VantaProvider>
+      <Scripts />
+    </div>
   );
 };
 
