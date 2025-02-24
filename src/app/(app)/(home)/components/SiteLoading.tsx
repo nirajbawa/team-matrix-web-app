@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import LoadingAnimation from "@/assets/lotties/site-loading.json";
-import LottiefilePlayer from "@/components/players/LottiefilePlayer";
+// import LottiefilePlayer from "@/components/players/LottiefilePlayer";
 import BackgroundAni from "@/assets/images/siteloading-bg-ani.gif";
 
 function SiteLoading() {
@@ -42,13 +42,13 @@ function SiteLoading() {
       }}
     >
       <div>
-        <LottiefilePlayer
+        {/* <LottiefilePlayer
           loop={lottieProps.loop}
           autoplay={lottieProps.autoplay}
           animationData={lottieProps.animationData}
           height={lottieProps.height}
           width={lottieProps.width}
-        />
+        /> */}
       </div>
     </div>
   );
