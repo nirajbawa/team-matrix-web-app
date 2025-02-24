@@ -13,15 +13,15 @@ export default async function Home() {
       <section id="hero">
         <HeroSection />
       </section>
-      {/* <section id="projects">
+      <section id="projects">
         <ProjectsMain />
-      </section> */}
-      {/* <section id="our-stories">
+      </section>
+      <section id="our-stories">
         <OurStories />
       </section>
       <section id="sponsors">
         <Sponsors />
-      </section> */}
+      </section>
       <section id="footer">
         <FooterMain />
       </section>
