@@ -16,20 +16,20 @@ function SiteLoading() {
   const mainDiv = useRef<HTMLDivElement | null>(null);
   const rocketDiv = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setTimeout(() => {
-        mainDiv.current?.classList.toggle("siteOverlay");
-      }, 2000);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     setTimeout(() => {
+  //       mainDiv.current?.classList.toggle("siteOverlay");
+  //     }, 2000);
 
-      setTimeout(() => {
-        rocketDiv.current?.classList.toggle("siteAnimateOnload");
-        setTimeout(() => {
-          mainDiv.current?.remove();
-        }, 4500);
-      }, 200);
-    }
-  }, []);
+  //     setTimeout(() => {
+  //       rocketDiv.current?.classList.toggle("siteAnimateOnload");
+  //       setTimeout(() => {
+  //         mainDiv.current?.remove();
+  //       }, 4500);
+  //     }, 200);
+  //   }
+  // }, []);
 
   return (
     <div
