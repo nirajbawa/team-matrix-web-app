@@ -1,8 +1,9 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import LoadingAnimation from "@/assets/lotties/site-loading.json";
-import LottiefilePlayer from "@/components/players/LottiefilePlayer";
+// import LottiefilePlayer from "@/components/players/LottiefilePlayer";
 import BackgroundAni from "@/assets/images/siteloading-bg-ani.gif";
+import { useLottie } from "lottie-react";
 
 function SiteLoading() {
   const lottieProps = {
@@ -13,7 +14,16 @@ function SiteLoading() {
     width: "30rem",
   };
 
-  // const [isClient, setIsClient] = React.useState(false);
+  const defaultOptions = {
+    loop: lottieProps.loop,
+    autoplay: lottieProps.autoplay,
+    animationData: lottieProps.animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const { View } = useLottie(defaultOptions);
 
   // const mainDiv = useRef<HTMLDivElement | null>(null);
   // const rocketDiv = useRef<HTMLDivElement | null>(null);
@@ -31,25 +41,16 @@ function SiteLoading() {
   //       }, 4500);
   //     }, 200);
   //   }
-  //   setIsClient(true);
   // }, []);
 
   return (
     <div
-      className="w-full h-svh fixed z-[100] bg-black bg-no-repeat bg-cover"
+      className="w-full h-svh flex items-center justify-center fixed z-[100] bg-black bg-no-repeat bg-cover"
       style={{
         backgroundImage: `url(${BackgroundAni.src})`,
       }}
     >
-      <div>
-        <LottiefilePlayer
-          loop={lottieProps.loop}
-          autoplay={lottieProps.autoplay}
-          animationData={lottieProps.animationData}
-          height={lottieProps.height}
-          width={lottieProps.width}
-        />
-      </div>
+      <div className="h-full w-[30rem]">{View}</div>
     </div>
   );
 }
