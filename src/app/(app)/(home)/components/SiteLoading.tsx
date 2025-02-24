@@ -23,6 +23,9 @@ function SiteLoading() {
 
     setTimeout(() => {
       rocketDiv.current?.classList.toggle("siteAnimateOnload");
+      setTimeout(() => {
+        mainDiv.current?.remove();
+      }, 4500);
     }, 200);
   }, []);
 
