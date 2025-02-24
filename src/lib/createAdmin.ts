@@ -24,6 +24,6 @@ export async function createAdmin() {
   } catch {}
 }
 
-
-createAdmin();
-
+try {
+  createAdmin();
+} catch {}
