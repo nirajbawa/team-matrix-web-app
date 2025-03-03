@@ -13,7 +13,7 @@ import { Sponsors } from "@/models/Sponsors";
 
 function SponsorsCards({ sponsorItem }: { sponsorItem: Sponsors[] }) {
   return (
-    <div className="flex justify-center flex-wrap gap-x-2 gap-y-5 py-10 px-5">
+    <div className="flex justify-center flex-wrap gap-x-2 gap-y-5 py-5 px-5">
       <Carousel
         opts={{
           align: "start",
@@ -31,7 +31,7 @@ function SponsorsCards({ sponsorItem }: { sponsorItem: Sponsors[] }) {
           {sponsorItem.map((itemData: Sponsors, index: number) => (
             <CarouselItem
               key={index}
-              className="basis-1/2 md:basis-1/3 md-xs:basis-1/4"
+              className="basis-1/2 md:basis-1/3 md-xs:basis-1/5"
             >
               <div className="p-1 md-xs:p-10">
                 <Card className="rounded-full">

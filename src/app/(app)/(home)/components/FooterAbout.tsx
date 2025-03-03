@@ -37,7 +37,7 @@ function FooterAbout() {
       <div className="lg:px-10 flex justify-center">
         <Image
           src={theme == "light" ? CollegeLogoDark : CollegeLogo}
-          className="w-80 md:w-96 h-44"
+          className="w-80 md:w-72 md:h-36 h-44"
           alt="img"
           width={500}
           height={300}
@@ -47,12 +47,12 @@ function FooterAbout() {
       <div className="w-1 dark:bg-white h-48 rounded-md hidden md:flex bg-black"></div>
       <div className="w-full md:w-[35%] flex justify-center items-center flex-col pt-5 px-5 xl:pl-8 xl:pt-0">
         <p
-          className={`w-full text-center capitalize md:text-left md:text-[1.1rem] ${open_sans.className} `}
+          className={`w-full text-center capitalize md:text-left md:text-[1rem] ${open_sans.className} `}
         >
           Department of Robtotics and Automation
         </p>
         <h1
-          className={`${norwester.className} tracking-[0.1rem] w-full text-center pt-3 md:pt-4 capitalize text-lg font-light md:text-left md:text-2xl md:leading-[2rem] ${arvo.className}`}
+          className={`${norwester.className} tracking-[0.1rem] w-full text-center pt-3 md:pt-4 capitalize text-lg font-light md:text-left md:text-xl md:leading-[2rem] ${arvo.className} font-extrabold`}
         >
           K.K. Wagh Institute of Engineering Education & Research, Nashik
         </h1>

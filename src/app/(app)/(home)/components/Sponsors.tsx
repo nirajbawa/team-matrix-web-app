@@ -24,7 +24,7 @@ async function Sponsors() {
   })) as SponsorsType[];
 
   return (
-    <div className="w-full h-full mb-16">
+    <div className="w-full h-full mb-5">
       <h1
         data-aos="flip-up"
         data-aos-duration="4000"

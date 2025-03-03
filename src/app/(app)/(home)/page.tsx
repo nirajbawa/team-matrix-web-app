@@ -1,3 +1,5 @@
+import About from "./components/About";
+import AboutMain from "./components/AboutMain";
 import FooterMain from "./components/FooterMain";
 import HeroMain from "./components/HeroMain";
 import OurStories from "./components/OurStories";
@@ -12,6 +14,9 @@ export default async function Home() {
     <div className="w-full">
       <section id="hero">
         <HeroMain />
+      </section>
+      <section id="about">
+        <AboutMain />
       </section>
       <section id="projects">
         <ProjectsMain />
