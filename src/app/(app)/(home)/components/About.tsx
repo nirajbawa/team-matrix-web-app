@@ -2,7 +2,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { League_Spartan } from "next/font/google";
 
-
 const league_spartan = League_Spartan({
   display: "swap",
   subsets: ["latin"],
@@ -58,7 +57,9 @@ function About({ about }: AboutProps) {
             <button onClick={makeTextFull}>Less</button>
           </div>
 
-          <div className={`hidden sm:block`}>{about1}</div>
+          <div className={`hidden sm:block dark:text-white text-black`}>
+            {about1}
+          </div>
         </div>
       </div>
       <div className="md:w-[40%] h-full pt-[3rem] flex justify-center items-center">
@@ -66,7 +67,7 @@ function About({ about }: AboutProps) {
           <video
             onClick={setControls}
             ref={videoPlayer}
-            className="cursor-pointer rounded-xl border-2 border-white h-auto"
+            className="cursor-pointer rounded-xl border-2 border-[#ff2d34] dark:border-white h-auto"
             preload="none"
             poster="/videos/video-play-button.png"
           >
