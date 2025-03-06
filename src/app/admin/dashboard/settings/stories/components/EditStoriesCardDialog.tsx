@@ -35,12 +35,14 @@ interface CreateNewProjectDialogProps {
   open: boolean;
   handleOpen: () => void;
   data: CurrentItem | null;
+  fetchData: () => void;
 }
 
 function EditStoriesCardDialog({
   open,
   handleOpen,
   data,
+  fetchData,
 }: CreateNewProjectDialogProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -92,6 +94,7 @@ function EditStoriesCardDialog({
           description: resData.message,
           variant: "default",
         });
+        fetchData();
         handleOpen();
       }
     } catch (error) {
@@ -111,8 +114,7 @@ function EditStoriesCardDialog({
       setFile(null);
       if (data?.images.length > 0) {
         data?.images?.forEach((item) => setImages((state) => [...state, item]));
-      }
-      else{
+      } else {
         setImages([]);
       }
     }

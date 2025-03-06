@@ -80,7 +80,7 @@ function Stories() {
               alt="img"
               width={500}
               height={300}
-              src={getImage(0)}
+              src={getImage(2)}
             />
           </div>
 
@@ -100,7 +100,7 @@ function Stories() {
               alt="img"
               width={500}
               height={300}
-              src={getImage(0)}
+              src={getImage(3)}
             />
           </div>
 
@@ -120,7 +120,7 @@ function Stories() {
               alt="img"
               width={500}
               height={300}
-              src={getImage(0)}
+              src={getImage(4)}
             />
           </div>
 
@@ -140,7 +140,7 @@ function Stories() {
               alt="img"
               width={500}
               height={300}
-              src={getImage(0)}
+              src={getImage(5)}
             />
           </div>
 
@@ -160,7 +160,7 @@ function Stories() {
               alt="img"
               width={500}
               height={300}
-              src={getImage(0)}
+              src={getImage(6)}
             />
           </div>
 
@@ -180,7 +180,7 @@ function Stories() {
               alt="img"
               width={500}
               height={300}
-              src={getImage(0)}
+              src={getImage(7)}
             />
           </div>
 
@@ -200,7 +200,7 @@ function Stories() {
               alt="img"
               width={500}
               height={300}
-              src={getImage(0)}
+              src={getImage(8)}
             />
           </div>
 
@@ -220,7 +220,7 @@ function Stories() {
               alt="img"
               width={500}
               height={300}
-              src={getImage(0)}
+              src={getImage(9)}
             />
           </div>
 
@@ -240,7 +240,7 @@ function Stories() {
               alt="img"
               width={500}
               height={300}
-              src={getImage(0)}
+              src={getImage(10)}
             />
           </div>
 
@@ -260,7 +260,7 @@ function Stories() {
               alt="img"
               width={500}
               height={300}
-              src={getImage(0)}
+              src={getImage(11)}
             />
           </div>
 
@@ -280,7 +280,7 @@ function Stories() {
               alt="img"
               width={500}
               height={300}
-              src={getImage(0)}
+              src={getImage(12)}
             />
           </div>
 
@@ -288,6 +288,7 @@ function Stories() {
             handleOpen={handleOpen}
             open={open}
             data={currentItem}
+            fetchData={fetchData}
           />
         </div>
       ) : (

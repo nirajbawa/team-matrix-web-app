@@ -30,7 +30,6 @@ function About({ about }: AboutProps) {
 
   const makeTextFull = (): void => {
     setFullText((state) => !state);
-    console.log("first");
   };
 
   return (

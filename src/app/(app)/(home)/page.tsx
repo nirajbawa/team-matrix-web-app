@@ -1,10 +1,10 @@
-import About from "./components/About";
 import AboutMain from "./components/AboutMain";
 import FooterMain from "./components/FooterMain";
 import HeroMain from "./components/HeroMain";
 import OurStories from "./components/OurStories";
 import ProjectsMain from "./components/ProjectsMain";
 import Sponsors from "./components/Sponsors";
+import Notification from "./components/Notification";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 60;
@@ -30,6 +30,7 @@ export default async function Home() {
       <section id="footer">
         <FooterMain />
       </section>
+      <Notification />
     </div>
   );
 }
