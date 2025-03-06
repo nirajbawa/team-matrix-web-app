@@ -12,26 +12,26 @@ const useTheme = (): [string, () => void] => {
   };
 
   useEffect(() => {
-    // Check the system's color scheme preference
-    const prefersDarkScheme = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
+    // // Check the system's color scheme preference
+    // const prefersDarkScheme = window.matchMedia(
+    //   "(prefers-color-scheme: dark)"
+    // ).matches;
 
-    // Set the initial theme based on system preference
-    setTheme(prefersDarkScheme ? "dark" : "light");
+    // // Set the initial theme based on system preference
+    // setTheme(prefersDarkScheme ? "dark" : "light");
 
-    // Listen for system theme changes
-    const themeListener = (e: MediaQueryListEvent) => {
-      setTheme(e.matches ? "dark" : "light");
-    };
+    // // Listen for system theme changes
+    // const themeListener = (e: MediaQueryListEvent) => {
+    //   setTheme(e.matches ? "dark" : "light");
+    // };
 
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    mediaQuery.addEventListener("change", themeListener);
+    // const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    // mediaQuery.addEventListener("change", themeListener);
 
-    // Cleanup the event listener on component unmount
-    return () => {
-      mediaQuery.removeEventListener("change", themeListener);
-    };
+    // // Cleanup the event listener on component unmount
+    // return () => {
+    //   mediaQuery.removeEventListener("change", themeListener);
+    // };
   }, []);
 
   useEffect(() => {
