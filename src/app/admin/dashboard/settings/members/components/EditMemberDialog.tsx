@@ -220,8 +220,7 @@ function EditMemberDialog({
                   <Label>Select Image </Label>
                   <div className="flex justify-center items-center">
                     <Input
-                      className="dark:placeholder:text-gray-300 text-gray-50 dark:border-gray-400"
-                      className="w-full h-full"
+                      className="w-full h-full dark:placeholder:text-gray-300 text-gray-50 dark:border-gray-400"
                       type="file"
                       onChange={handleFileData}
                       accept=".jpeg,.jpg,.png,.svg,.webp"
