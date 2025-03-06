@@ -103,7 +103,7 @@ function HomeNavbar() {
               className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "about" ? "bg-white text-black" : ""}`}
             >
               <Link
-                href="#about"
+                href="/#about"
                 onClick={() => {
                   setScroll(true);
                 }}
@@ -115,7 +115,7 @@ function HomeNavbar() {
             <li
               className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "projects" ? "bg-white text-black" : ""}`}
             >
-              <Link href="#projects" onClick={() => setScroll(true)}>
+              <Link href="/#projects" onClick={() => setScroll(true)}>
                 PROJECTS
               </Link>
             </li>
@@ -123,7 +123,7 @@ function HomeNavbar() {
             <li
               className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "our-stories" ? "bg-white text-black" : ""}`}
             >
-              <Link href="#our-stories" onClick={() => setScroll(true)}>
+              <Link href="/#our-stories" onClick={() => setScroll(true)}>
                 STORIES
               </Link>
             </li>
@@ -149,7 +149,7 @@ function HomeNavbar() {
         <div className="w-[50%] flex justify-end xl:hidden text-xl px-4">
           <button
             onClick={() => {
-              router.replace("#login");
+              router.replace("/#login");
             }}
             className="text-xl tracking-wide h-10 flex justify-center transition-all delay-200 p-3 rounded-md items-center hover:bg-[#fcfbfb27]"
           >
@@ -162,7 +162,7 @@ function HomeNavbar() {
               className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "sponsors" ? "bg-white text-black" : ""}`}
             >
               <Link
-                href="#sponsors"
+                href="/#sponsors"
                 onClick={() => {
                   setScroll(true);
                 }}

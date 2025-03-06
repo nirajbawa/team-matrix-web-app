@@ -22,22 +22,22 @@ function MobileMenu({
       >
         <ul className="flex flex-col w-full justify-start px-7 text-xl">
           <li className="w-full text-white text-center h-16 flex justify-center items-center">
-            <Link href="#about" onClick={toggleMenu}>
+            <Link href="/#about" onClick={toggleMenu}>
               ABOUT
             </Link>
           </li>
           <li className="w-full text-white text-center h-16 flex justify-center items-center">
-            <Link href="#projects" onClick={toggleMenu}>
+            <Link href="/#projects" onClick={toggleMenu}>
               PROJECTS
             </Link>
           </li>
           <li className="w-full text-white text-center h-16 flex justify-center items-center">
-            <Link href="#our-stories" onClick={toggleMenu}>
+            <Link href="/#our-stories" onClick={toggleMenu}>
               STORIES
             </Link>
           </li>
           <li className="w-full text-white text-center h-16 flex justify-center items-center">
-            <Link href="#sponsors" onClick={toggleMenu}>
+            <Link href="/#sponsors" onClick={toggleMenu}>
               SPONSORS
             </Link>
           </li>

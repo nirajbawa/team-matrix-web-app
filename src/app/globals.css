@@ -264,7 +264,7 @@ html {
 
 @keyframes siteAni {
   0% {
-    top: 0rem;
+    top: 50rem;
   }
   100% {
     top: -50rem;

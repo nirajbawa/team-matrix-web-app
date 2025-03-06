@@ -16,7 +16,6 @@ function SiteLoading() {
       setTimeout(() => {
         mainDiv.current?.classList.toggle("siteOverlay");
       }, 2000);
-
       setTimeout(() => {
         rocketDiv.current?.classList.toggle("siteAnimateOnload");
         setTimeout(() => {
@@ -29,14 +28,20 @@ function SiteLoading() {
 
   return (
     <div
-      className={`w-full h-svh flex items-center justify-center z-[100] bg-black bg-no-repeat bg-cover ${animation ? "hidden" : "fixed"}`}
+      className={`w-full h-svh top-0 flex items-center justify-center z-[100] bg-black bg-no-repeat bg-cover ${animation ? "hidden" : "fixed"}`}
       style={{
         backgroundImage: `url(${BackgroundAni.src})`,
       }}
       ref={mainDiv}
     >
-      <div ref={rocketDiv}>
-        <Image src={RocketImage} width={500} height={500} alt="rocket" />
+      <div ref={rocketDiv} className="top-[100rem] fixed">
+        <Image
+          className="rotate-[-45deg]"
+          src={RocketImage}
+          width={500}
+          height={500}
+          alt="rocket"
+        />
       </div>
     </div>
   );
