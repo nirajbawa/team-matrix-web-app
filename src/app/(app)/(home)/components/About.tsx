@@ -33,7 +33,7 @@ function About({ about }: AboutProps) {
   };
 
   return (
-    <div className="w-full h-ful mb-14 mt-20  justify-between flex flex-col md:flex-row items-center px-10 md:px-20">
+    <div className="w-full h-ful mb-14 mt-20  justify-between flex flex-col md:flex-row items-center px-6 md:px-20">
       <div className="md:w-[50%] h-full flex flex-col gap-y-10">
         <h1
           className={`text-4xl font-bold text-center uppercase ${league_spartan.className}`}
