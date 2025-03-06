@@ -8,19 +8,21 @@ interface MembersProps {
 
 function MembersScrollCards({ data }: MembersProps) {
   data = JSON.parse(data);
+  const middleIndex = Math.floor(data.length / 2);
 
   return (
     <>
-      <div className="w-full h-full my-10 flex-wrap gap-14 gap-x-28 sm:gap-x-28 lg:gap-x-[13rem] flex justify-center sm:justify-between md:justify-evenly">
+      <div className="w-full h-full sm:mt-72 my-10 flex-wrap gap-14 gap-x-28 sm:gap-x-28 lg:gap-x-[13rem] flex justify-center sm:justify-between md:justify-evenly">
         {data &&
           data?.map((item: any, index: number) => {
             return (
-              <MembersCard
-                key={index}
-                image={item?.image}
-                name={item?.name}
-                position={item?.position}
-              />
+              <div key={index} className={index === middleIndex ? "mb-10" : ""}>
+                <MembersCard
+                  image={item?.image}
+                  name={item?.name}
+                  position={item?.position}
+                />
+              </div>
             );
           })}
       </div>

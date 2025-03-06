@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import {
   Button,
@@ -11,7 +11,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import *  as z from "zod";
+import * as z from "zod";
 import { ApiResponse } from "@/types/ApiResponse";
 import axios, { AxiosError } from "axios";
 import { membersSchema } from "@/schemas/membersSchema";
@@ -24,27 +24,27 @@ import {
 } from "@/components/ui/form";
 import { InputNormal } from "@/components/ui/inputNormal";
 import { Label } from "@/components/ui/label";
-import LottiefilePlayer from '@/components/players/LottiefilePlayer';
+import LottiefilePlayer from "@/components/players/LottiefilePlayer";
 import LoadingAnimation from "@/assets/lotties/gray-loading.json";
 import { Loader2 } from "lucide-react";
-
 
 interface EditMemberDialogProps {
   open: boolean;
   handleOpen: () => void;
-  data:any;
+  data: any;
   fetchData: () => void;
 }
 
-
-function EditMemberDialog({ open, handleOpen, data, fetchData }: EditMemberDialogProps) {
-
-
+function EditMemberDialog({
+  open,
+  handleOpen,
+  data,
+  fetchData,
+}: EditMemberDialogProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [file, setFile] = useState<any>(null);
   const [upload, setUpload] = useState<boolean>(false);
-
 
   const lottieProps = {
     loop: true,
@@ -54,51 +54,49 @@ function EditMemberDialog({ open, handleOpen, data, fetchData }: EditMemberDialo
     width: "5rem",
   };
 
-
   // 1. Define your form.
   const form = useForm<z.infer<typeof membersSchema>>({
     resolver: zodResolver(membersSchema),
     defaultValues: {
       name: "",
-      position: ""
+      position: "",
     },
-  })
+  });
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof membersSchema>) {
     setIsSubmitting(true);
     try {
-
-      if(file==null)
-      {
+      if (file == null) {
         toast({
           title: "Upload Image",
           description: "Please upload image also",
           variant: "destructive",
         });
-      }else{
-
-      const payload = {
-        name: values.name,
-        position: values.position,
-        image: file
-      };
-      let id = data?._id;
-      {
-        const res = await axios.patch<ApiResponse>(`/api/admin/settings/members/${id}`, payload);
-        const data = res.data;
-        toast({
-          className: "dark:bg-black",
-          title: "Member Updated",
-          description: data.message,
-          variant: "default",
-        });
-        fetchData();
-        handleOpen();
+      } else {
+        const payload = {
+          name: values.name,
+          position: values.position,
+          image: file,
+        };
+        let id = data?._id;
+        {
+          const res = await axios.patch<ApiResponse>(
+            `/api/admin/settings/members/${id}`,
+            payload
+          );
+          const data = res.data;
+          toast({
+            className: "dark:bg-black",
+            title: "Member Updated",
+            description: data.message,
+            variant: "default",
+          });
+          fetchData();
+          handleOpen();
+        }
       }
-    }
-    }
-    catch (error) {
+    } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
         title: "Failed",
@@ -109,36 +107,34 @@ function EditMemberDialog({ open, handleOpen, data, fetchData }: EditMemberDialo
     setIsSubmitting(false);
   }
 
-
-
   const uploadFile = async (file: any) => {
     setUpload(true);
     try {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await axios.post<ApiResponse>("/api/dashboard/uploads", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await axios.post<ApiResponse>(
+        "/api/dashboard/uploads",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
       setFile(response.data.data.imgUrl);
-
-    } catch (error: any) {
-
-    }
+    } catch (error: any) {}
     setUpload(false);
-  }
+  };
 
-
-  const deleteMember = async() =>{
+  const deleteMember = async () => {
     try {
-
-
       let id = data?._id;
       {
-        const res = await axios.delete<ApiResponse>(`/api/admin/settings/members/${id}`);
+        const res = await axios.delete<ApiResponse>(
+          `/api/admin/settings/members/${id}`
+        );
         const data = res.data;
         toast({
           className: "dark:bg-black",
@@ -149,9 +145,7 @@ function EditMemberDialog({ open, handleOpen, data, fetchData }: EditMemberDialo
         fetchData();
         handleOpen();
       }
- 
-    }
-    catch (error) {
+    } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
         title: "Failed",
@@ -159,15 +153,13 @@ function EditMemberDialog({ open, handleOpen, data, fetchData }: EditMemberDialo
         variant: "destructive",
       });
     }
-  }
-
+  };
 
   const handleFileData = (e: React.ChangeEvent<any>) => {
     uploadFile(e.target.files[0]);
-  }
+  };
 
-
-  useEffect(()=>{
+  useEffect(() => {
     form.setValue("name", data?.name);
     form.setValue("position", data?.position);
     setFile(data?.image);
@@ -175,8 +167,14 @@ function EditMemberDialog({ open, handleOpen, data, fetchData }: EditMemberDialo
 
   return (
     <>
-      <Dialog open={open} handler={handleOpen}>
-        <DialogHeader className="p-5 pl-10 pt-10">Edit Member</DialogHeader>
+      <Dialog
+        open={open}
+        handler={handleOpen}
+        className="bg-blue-gray-50 dark:bg-gray-900"
+      >
+        <DialogHeader className="p-5 pl-10 pt-10 dark:text-gray-100">
+          Edit Member
+        </DialogHeader>
         <DialogBody>
           <Form {...form}>
             <form
@@ -190,7 +188,12 @@ function EditMemberDialog({ open, handleOpen, data, fetchData }: EditMemberDialo
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <InputNormal autoComplete="off"  placeholder="Name" {...field} />
+                        <InputNormal
+                          className="dark:placeholder:text-gray-300 text-gray-50 dark:border-gray-400"
+                          autoComplete="off"
+                          placeholder="Name"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -202,7 +205,12 @@ function EditMemberDialog({ open, handleOpen, data, fetchData }: EditMemberDialo
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <InputNormal autoComplete="off"  placeholder="Position" {...field} />
+                        <InputNormal
+                          className="dark:placeholder:text-gray-300 text-gray-50 dark:border-gray-400"
+                          autoComplete="off"
+                          placeholder="Position"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -211,22 +219,35 @@ function EditMemberDialog({ open, handleOpen, data, fetchData }: EditMemberDialo
                 <div>
                   <Label>Select Image </Label>
                   <div className="flex justify-center items-center">
-                    <Input className='w-full h-full' type='file' onChange={handleFileData} accept='.jpeg,.jpg,.png,.svg,.webp' />
-                    {
-                      upload ? <LottiefilePlayer
+                    <Input
+                      className="dark:placeholder:text-gray-300 text-gray-50 dark:border-gray-400"
+                      className="w-full h-full"
+                      type="file"
+                      onChange={handleFileData}
+                      accept=".jpeg,.jpg,.png,.svg,.webp"
+                    />
+                    {upload ? (
+                      <LottiefilePlayer
                         loop={lottieProps.loop}
                         autoplay={lottieProps.autoplay}
                         animationData={lottieProps.animationData}
                         height={lottieProps.height}
                         width={lottieProps.width}
-                      /> : ""
-                    }
-
+                      />
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </div>
               </div>
-              <div className='w-full flex justify-end pr-5 items-center'>
-                <Button type="submit" disabled={isSubmitting} variant="gradient" color="green" className='bg-gray-900 text-white'>
+              <div className="w-full flex justify-end pr-5 items-center">
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  variant="gradient"
+                  color="green"
+                  className="bg-gray-900 text-white"
+                >
                   {isSubmitting ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -235,13 +256,12 @@ function EditMemberDialog({ open, handleOpen, data, fetchData }: EditMemberDialo
                     "Update"
                   )}
                 </Button>
-
               </div>
             </form>
           </Form>
         </DialogBody>
         <DialogFooter>
-        <Button
+          <Button
             variant="gradient"
             color="red"
             onClick={deleteMember}

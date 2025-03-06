@@ -242,7 +242,7 @@ html {
 }
 
 .carousel-glass-bg {
-  background: #f8322e1f;
+  background: #f8322e4d;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2.1px);
   -webkit-backdrop-filter: blur(2.1px);
@@ -255,7 +255,7 @@ html {
 
 .siteAnimateOnload {
   position: relative; /* Make sure the element has a position */
-  animation: siteAni 2s linear forwards;
+  animation: siteAni 3s linear forwards;
 }
 
 .siteOverlay {

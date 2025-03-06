@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import NoImage from "@/assets/images/no-image.png";
+import NoImage from "@/assets/images/banner.png";
 
 function Notification() {
   const [open, setOpen] = useState<boolean>(false);
@@ -24,9 +24,9 @@ function Notification() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="w-[90%] md:w-full dialog-bg">
+      <DialogContent className=" w-[85%] sm:left-2/4 sm:w-full dialog-bg">
         <DialogHeader>
-          <DialogTitle className="leading-8 text-2xl sm:text-3xl">
+          <DialogTitle className="leading-8 text-xl w-full sm:text-3xl">
             Join Us for RoboSphere
           </DialogTitle>
           <DialogDescription className="text-lg">
@@ -39,7 +39,7 @@ function Notification() {
             alt="banner"
             width={500}
             height={500}
-            className="w-full h-96"
+            className="w-full md:h-[30rem]"
           />
         </div>
         <DialogFooter className="flex justify-between">
@@ -49,6 +49,7 @@ function Notification() {
                 "https://docs.google.com/forms/d/e/1FAIpQLSdKJn2pI74pnRqZN4kaU3veC2doii3jDXb0m5KTRyO4TWXynw/viewform",
                 "__blank"
               );
+              setOpen(false);
             }}
             type="button"
             variant="default"

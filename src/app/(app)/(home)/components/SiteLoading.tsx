@@ -34,14 +34,8 @@ function SiteLoading() {
       }}
       ref={mainDiv}
     >
-      <div ref={rocketDiv} className="top-[100rem] fixed">
-        <Image
-          className="rotate-[-45deg]"
-          src={RocketImage}
-          width={500}
-          height={500}
-          alt="rocket"
-        />
+      <div ref={rocketDiv} className="fixed top-[50rem]">
+        <Image src={RocketImage} width={500} height={500} alt="rocket" />
       </div>
     </div>
   );

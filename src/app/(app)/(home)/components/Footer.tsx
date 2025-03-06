@@ -72,23 +72,23 @@ function Footer() {
                 <Link href="/">home</Link>
               </li>
               <li className="w-full">
-                <Link href="/">about</Link>
+                <Link href="/about">about</Link>
               </li>
               <li className="w-full">
-                <Link href="/">projects</Link>
+                <Link href="/#projects">projects</Link>
               </li>
             </ul>
             <ul
               className={`items-center mt-5 tracking-[0.1rem] flex justify-start text-center capitalize gap-y-3 flex-col md:text-left ${norwester.className}`}
             >
               <li className="w-full">
-                <Link href="/">members</Link>
+                <Link href="/members">members</Link>
               </li>
               <li className="w-full">
-                <Link href="/">sponsers</Link>
+                <Link href="/#sponsors">sponsers</Link>
               </li>
               <li className="w-full">
-                <Link href="/">Admin Login</Link>
+                <Link href="/admin/auth">Admin Login</Link>
               </li>
             </ul>
           </div>
@@ -111,17 +111,23 @@ function Footer() {
       <div className="mt-14 w-full md:flex md:justify-between md:items-center md:flex-row-reverse md:mt-12 lg:mt-16">
         <ul className="w-full flex gap-x-5 text-xl justify-center items-center md:justify-end">
           <li>
-            <Link href="">
+            <Link
+              href="https://www.instagram.com/teammatrix._/"
+              target="__balnk"
+            >
               <InstagramIcon fontSize="large" />
             </Link>
           </li>
           <li>
-            <Link href="">
+            <Link href="/" target="__balnk">
               <GitHubIcon fontSize="large" />
             </Link>
           </li>
           <li>
-            <Link href="">
+            <Link
+              href="https://www.linkedin.com/company/team-matrixs/"
+              target="__balnk"
+            >
               <LinkedInIcon fontSize="large" />
             </Link>
           </li>

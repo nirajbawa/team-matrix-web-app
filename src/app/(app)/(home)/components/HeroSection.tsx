@@ -68,13 +68,28 @@ const HeroSection = () => {
           className="flex justify-between items-center gap-10 text-white"
           data-aos="fade-up"
         >
-          <Link href="" data-aos="fade" data-aos-duration="4000">
+          <Link
+            href="https://www.instagram.com/teammatrix._/"
+            data-aos="fade"
+            data-aos-duration="4000"
+            target="__balnk"
+          >
             <InstagramIcon fontSize="large" />
           </Link>
-          <Link href="" data-aos="fade" data-aos-duration="4000">
+          <Link
+            href="https://www.linkedin.com/company/team-matrixs/"
+            data-aos="fade"
+            data-aos-duration="4000"
+            target="__balnk"
+          >
             <LinkedInIcon fontSize="large" />
           </Link>
-          <Link href="" data-aos="fade" data-aos-duration="4000">
+          <Link
+            href="mailto:teammatrixofficials@gmail.com"
+            data-aos="fade"
+            data-aos-duration="4000"
+            target="__balnk"
+          >
             <MailOutlineIcon fontSize="large" />
           </Link>
         </div>
