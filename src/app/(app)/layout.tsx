@@ -3,7 +3,7 @@ import HomeNavbar from "@/components/navbars/HomeNavbar";
 import Scripts from "./(home)/components/Scripts";
 
 export const metadata: Metadata = {
-  title: "Team Matrix Robotics Club",
+  title: "Team Matrix",
   description:
     "Team Matrix is the robotics team of K.K. Wagh Institute of Engineering Education and Research, Nashik. Our club unites students from various technical branches to create robotic solutions, achieving excellence in hackathons, including 2nd place in the ISRO Hackathon for Chandrayaan 3.",
   keywords: [
