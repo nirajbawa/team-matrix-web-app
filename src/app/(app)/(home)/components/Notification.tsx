@@ -54,7 +54,7 @@ function Notification() {
               }}
               type="button"
               variant="default"
-              className="bg-green-500"
+              className="bg-green-500 w-full"
             >
               Register Now
             </Button>

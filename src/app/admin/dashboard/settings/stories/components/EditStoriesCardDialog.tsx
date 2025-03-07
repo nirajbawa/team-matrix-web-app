@@ -82,7 +82,6 @@ function EditStoriesCardDialog({
           text: values.text,
           images: images,
         };
-        console.log(payload);
         const res = await axios.post<ApiResponse>(
           `/api/admin/settings/stories/${data?._id}`,
           payload
@@ -157,7 +156,6 @@ function EditStoriesCardDialog({
     if (images.length === 2) {
       setImages((state) => state.slice(1));
     }
-    console.log(images);
   }, [images]);
 
   const handleFileData = (e: React.ChangeEvent<HTMLInputElement>) => {

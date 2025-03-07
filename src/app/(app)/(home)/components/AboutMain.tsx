@@ -16,7 +16,6 @@ async function AboutMain() {
 
     // Handle case where no data matches
     const [about1] = filteredData;
-    console.log("hello");
     if (!about1) {
       throw new Error("No about data found.");
     }

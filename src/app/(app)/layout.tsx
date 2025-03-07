@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HomeNavbar from "@/components/navbars/HomeNavbar";
 import Scripts from "./(home)/components/Scripts";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Team Matrix",
@@ -42,6 +43,23 @@ export default function RootLayout({
   return (
     <>
       <Scripts />
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-3RWN1MRC8M"
+      ></Script>
+      <Script
+        id="google-analytics"
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-3RWN1MRC8M');
+        `,
+        }}
+      />
+      <Script />
+
       <div className="w-full overflow-hidden dark:bg-black">
         <HomeNavbar />
         {children}

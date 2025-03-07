@@ -102,7 +102,6 @@ function CreateNewProjectDialog({
             },
           ],
         };
-        console.log(payload);
         const res = await axios.post<ApiResponse>(
           `/api/admin/settings/projects`,
           payload
@@ -176,7 +175,6 @@ function CreateNewProjectDialog({
     if (images.length === 4) {
       setImages((state) => state.slice(1));
     }
-    console.log(images);
   }, [images]);
 
   const handleFileData = (e: React.ChangeEvent<HTMLInputElement>) => {

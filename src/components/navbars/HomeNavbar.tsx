@@ -149,7 +149,7 @@ function HomeNavbar() {
         <div className="w-[50%] flex justify-end xl:hidden text-xl px-4">
           <button
             onClick={() => {
-              router.replace("/#login");
+              router.replace("/login");
             }}
             className="text-xl tracking-wide h-10 flex justify-center transition-all delay-200 p-3 rounded-md items-center hover:bg-[#fcfbfb27]"
           >

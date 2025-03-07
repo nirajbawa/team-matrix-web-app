@@ -120,7 +120,6 @@ function ProjectCardsContainer({ data }: ProjectCardsContainerProps) {
         <button
           className="bg-red-800  w-20 absolute animate-bounce h-20 rounded-full top-[6rem] -left-12 dark:text-white  text-black text-4xl carousel-glass-bg"
           onClick={() => {
-            console.log("hello");
             carouselRef.current?.previous(0);
             setActiveIndex((index) => (index - 1 >= 0 ? index - 1 : index));
           }}

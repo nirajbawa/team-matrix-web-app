@@ -11,7 +11,7 @@ export async function POST(
     const { id } = await params.params;
     const { images, text } = await req.json();
 
-    console.log(images, text);
+  
 
     const result = await StoriesModel.updateOne(
       { _id: id },
@@ -21,7 +21,6 @@ export async function POST(
       }
     );
 
-    console.log(result);
 
     if (result) {
     } else {
@@ -42,7 +41,7 @@ export async function POST(
       { status: 200 }
     );
   } catch (error) {
-    console.log(error);
+
     return Response.json(
       {
         success: false,
