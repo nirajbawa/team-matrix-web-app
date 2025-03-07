@@ -19,10 +19,10 @@ function About({ about }: AboutProps) {
 
   const about1 = about;
 
-  const setControls = (): void => {
-    videoPlayer.current?.setAttribute("controls", "true");
-    videoPlayer.current?.play();
-  };
+  // const setControls = (): void => {
+  //   videoPlayer.current?.setAttribute("controls", "true");
+  //   videoPlayer.current?.play();
+  // };
 
   useEffect(() => {
     setVideoSrc("/videos/about-video.mp4");
@@ -64,10 +64,9 @@ function About({ about }: AboutProps) {
       <div className="md:w-[40%] h-full pt-[3rem] flex justify-center items-center">
         {videoSrc ? (
           <video
-            onClick={setControls}
+            controls={true}
             ref={videoPlayer}
             className="cursor-pointer rounded-xl border-2 border-[#ff2d34] dark:border-white h-auto"
-            preload="none"
             poster="/videos/video-play-button.png"
           >
             <source src={videoSrc} type="video/mp4" />
