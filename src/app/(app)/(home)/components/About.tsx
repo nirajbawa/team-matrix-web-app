@@ -19,11 +19,6 @@ function About({ about }: AboutProps) {
 
   const about1 = about;
 
-  // const setControls = (): void => {
-  //   videoPlayer.current?.setAttribute("controls", "true");
-  //   videoPlayer.current?.play();
-  // };
-
   useEffect(() => {
     setVideoSrc("/videos/about-video.mp4");
   }, []);
