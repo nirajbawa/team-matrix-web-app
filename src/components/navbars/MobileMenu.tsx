@@ -21,36 +21,36 @@ function MobileMenu({
         className={`h-full w-full flex justify-center pt-20 fixed top-0 z-50 mobile-menu-glass-bg ${isOpen ? "block" : "hidden"}`}
       >
         <ul className="flex flex-col w-full justify-start px-7 text-xl">
-          <li className="w-full text-white text-center h-16 flex justify-center items-center">
-            <Link href="/#about" onClick={toggleMenu}>
+          <Link href="/#about" onClick={toggleMenu}>
+            <li className="w-full text-white text-center h-16 flex justify-center items-center">
               ABOUT
-            </Link>
-          </li>
-          <li className="w-full text-white text-center h-16 flex justify-center items-center">
-            <Link href="/#projects" onClick={toggleMenu}>
+            </li>
+          </Link>
+          <Link href="/#projects" onClick={toggleMenu}>
+            <li className="w-full text-white text-center h-16 flex justify-center items-center">
               PROJECTS
-            </Link>
-          </li>
-          <li className="w-full text-white text-center h-16 flex justify-center items-center">
-            <Link href="/#our-stories" onClick={toggleMenu}>
+            </li>
+          </Link>
+          <Link href="/#our-stories" onClick={toggleMenu}>
+            <li className="w-full text-white text-center h-16 flex justify-center items-center">
               STORIES
-            </Link>
-          </li>
-          <li className="w-full text-white text-center h-16 flex justify-center items-center">
-            <Link href="/#sponsors" onClick={toggleMenu}>
+            </li>
+          </Link>
+          <Link href="/#sponsors" onClick={toggleMenu}>
+            <li className="w-full text-white text-center h-16 flex justify-center items-center">
               SPONSORS
-            </Link>
-          </li>
-          <li className="w-full text-white text-center h-16 flex justify-center items-center">
-            <Link href="/login" onClick={toggleMenu}>
+            </li>
+          </Link>
+          <Link href="/login" onClick={toggleMenu}>
+            <li className="w-full text-white text-center h-16 flex justify-center items-center">
               SIGN IN
-            </Link>
-          </li>
-          <li className="w-full text-white text-center h-16 flex justify-center items-center">
-            <Link href="/members" onClick={toggleMenu}>
+            </li>
+          </Link>
+          <Link href="/members" onClick={toggleMenu}>
+            <li className="w-full text-white text-center h-16 flex justify-center items-center">
               MEMBERS
-            </Link>
-          </li>
+            </li>
+          </Link>
           <motion.li
             key={isOpen ? "open" : "close"}
             initial={{ rotate: 0 }} // Initial rotation angle

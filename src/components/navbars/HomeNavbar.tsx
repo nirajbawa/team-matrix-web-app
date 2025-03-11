@@ -99,34 +99,29 @@ function HomeNavbar() {
         </div>
         <div className="hidden xl:flex border-b-white border-b-2 h-full justify-start  items-center w-[50%] px-10">
           <ul className="flex justify-between gap-x-16 items-center text-lg pl-16">
-            <li
-              className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "about" ? "bg-white text-black" : ""}`}
+            <Link
+              href="/#about"
             >
-              <Link
-                href="/#about"
-                onClick={() => {
-                  setScroll(true);
-                }}
+              <li
+                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "about" ? "bg-white text-black" : ""}`}
               >
                 ABOUT
-              </Link>
-            </li>
-
-            <li
-              className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "projects" ? "bg-white text-black" : ""}`}
-            >
-              <Link href="/#projects" onClick={() => setScroll(true)}>
+              </li>
+            </Link>
+            <Link href="/#projects">
+              <li
+                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "projects" ? "bg-white text-black" : ""}`}
+              >
                 PROJECTS
-              </Link>
-            </li>
-
-            <li
-              className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "our-stories" ? "bg-white text-black" : ""}`}
-            >
-              <Link href="/#our-stories" onClick={() => setScroll(true)}>
+              </li>
+            </Link>
+            <Link href="/#our-stories">
+              <li
+                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "our-stories" ? "bg-white text-black" : ""}`}
+              >
                 STORIES
-              </Link>
-            </li>
+              </li>
+            </Link>
           </ul>
         </div>
         <div>
@@ -158,34 +153,28 @@ function HomeNavbar() {
         </div>
         <div className="hidden xl:flex border-b-white border-b-2 h-full justify-end items-center w-[50%] px-10">
           <ul className="flex justify-between gap-x-16 items-center text-lg pr-9">
-            <li
-              className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "sponsors" ? "bg-white text-black" : ""}`}
-            >
-              <Link
-                href="/#sponsors"
-                onClick={() => {
-                  setScroll(true);
-                }}
+            <Link href="/#sponsors">
+              <li
+                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "sponsors" ? "bg-white text-black" : ""}`}
               >
                 SPONSORS
-              </Link>
-            </li>
-
-            <li
-              className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white hover:text-black px-3 py-2 hover:text-black11 ${activeSection === "login" ? "bg-white text-black" : ""}`}
-            >
-              <Link href="/login" onClick={() => setScroll(true)}>
+              </li>
+            </Link>
+            <Link href="/login">
+              <li
+                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white hover:text-black px-3 py-2 hover:text-black11 ${activeSection === "login" ? "bg-white text-black" : ""}`}
+              >
                 SIGN IN
-              </Link>
-            </li>
+              </li>
+            </Link>
 
-            <li
-              className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white hover:text-black px-3 py-2 hover:text-black11 ${activeSection === "recruitment" ? "bg-white text-black" : ""}`}
-            >
-              <Link href="/members" onClick={() => setScroll(true)}>
+            <Link href="/members">
+              <li
+                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white hover:text-black px-3 py-2 hover:text-black11 ${activeSection === "recruitment" ? "bg-white text-black" : ""}`}
+              >
                 MEMBERS
-              </Link>
-            </li>
+              </li>
+            </Link>
           </ul>
         </div>
       </motion.nav>
