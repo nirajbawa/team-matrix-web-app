@@ -103,7 +103,9 @@ function Footer() {
           </div>
           <div className="flex gap-x-2 flex-wrap w-full text-center items-center justify-center md:justify-start md:text-left md:tracking-[0.2rem]">
             <MailOutlineIcon />
-            <Link href="mailto:teammatrix@gmail.com">teammatrix@gmail.com</Link>
+            <Link href="mailto:teammatrixofficials@gmail.com">
+              teammatrixofficials@gmail.com
+            </Link>
           </div>
         </div>
       </div>
