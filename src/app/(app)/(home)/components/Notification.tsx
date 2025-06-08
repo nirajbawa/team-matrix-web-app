@@ -1,5 +1,4 @@
 "use client";
-import { Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -11,7 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import NoImage from "@/assets/images/banner.png";
+import NoImage from "@/assets/images/banner.jpg";
 
 function Notification() {
   const [open, setOpen] = useState<boolean>(false);
@@ -27,11 +26,11 @@ function Notification() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className=" w-[85%] sm:left-2/4 sm:w-full dialog-bg">
           <DialogHeader>
-            <DialogTitle className="leading-8 text-xl w-full sm:text-3xl">
-              Join Us for RoboSphere
+            <DialogTitle className="leading-8 text-sm w-full sm:text-lg">
+              🚀 Join Team Matrix - Build the Future of Robotics!
             </DialogTitle>
-            <DialogDescription className="text-lg">
-              Unlock the World of Robotics with Team Matix
+            <DialogDescription className="text-sm">
+              From concept to competition - let's build it together.
             </DialogDescription>
           </DialogHeader>
           <div className="flex items-center space-x-2">
@@ -47,7 +46,7 @@ function Notification() {
             <Button
               onClick={() => {
                 window.open(
-                  "https://docs.google.com/forms/d/e/1FAIpQLSdKJn2pI74pnRqZN4kaU3veC2doii3jDXb0m5KTRyO4TWXynw/viewform",
+                  "https://docs.google.com/forms/d/e/1FAIpQLSeBEAGQlYInnTMTOkVPdeCwD-ReYSoGozWl6AH-T0yEO_4s2A/viewform?usp=send_form",
                   "__blank"
                 );
                 setOpen(false);
@@ -56,7 +55,7 @@ function Notification() {
               variant="default"
               className="bg-green-500 w-full"
             >
-              Register Now
+              Apply Now
             </Button>
           </DialogFooter>
         </DialogContent>
