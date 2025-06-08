@@ -26,7 +26,7 @@ function Notification() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className=" w-[85%] sm:left-2/4 sm:w-full dialog-bg">
           <DialogHeader>
-            <DialogTitle className="leading-8 text-sm w-full sm:text-lg">
+            <DialogTitle className="leading-8 text-lg w-full sm:text-lg">
               🚀 Join Team Matrix - Build the Future of Robotics!
             </DialogTitle>
             <DialogDescription className="text-sm">
