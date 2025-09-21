@@ -20,7 +20,7 @@ function MobileMenu({
         transition={{ duration: 1, ease: "easeInOut" }} // Smooth easin
         className={`h-full w-full flex justify-center pt-20 fixed top-0 z-50 mobile-menu-glass-bg ${isOpen ? "block" : "hidden"}`}
       >
-        <ul className="flex flex-col w-full justify-start px-7 text-xl">
+        <ul className="flex flex-col w-full justify-start px-7 text-xl uppercase">
           <Link href="/#about" onClick={toggleMenu}>
             <li className="w-full text-white text-center h-16 flex justify-center items-center">
               ABOUT
@@ -41,9 +41,9 @@ function MobileMenu({
               SPONSORS
             </li>
           </Link>
-          <Link href="/login" onClick={toggleMenu}>
-            <li className="w-full text-white text-center h-16 flex justify-center items-center">
-              SIGN IN
+          <Link href="/recruitment" onClick={toggleMenu}>
+            <li className="w-full text-white uppercase text-center h-16 flex justify-center items-center">
+              recruitment
             </li>
           </Link>
           <Link href="/members" onClick={toggleMenu}>

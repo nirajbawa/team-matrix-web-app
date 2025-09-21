@@ -97,11 +97,9 @@ function HomeNavbar() {
             <MenuIcon fontSize="large" />
           </button>
         </div>
-        <div className="hidden xl:flex border-b-white border-b-2 h-full justify-start  items-center w-[50%] px-10">
+        <div className="hidden xl:flex border-b-white border-b-2 h-full justify-start uppercase items-center w-[50%] px-10">
           <ul className="flex justify-between gap-x-16 items-center text-lg pl-16">
-            <Link
-              href="/#about"
-            >
+            <Link href="/#about">
               <li
                 className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "about" ? "bg-white text-black" : ""}`}
               >
@@ -160,11 +158,11 @@ function HomeNavbar() {
                 SPONSORS
               </li>
             </Link>
-            <Link href="/login">
+            <Link href="/recruitment">
               <li
-                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white hover:text-black px-3 py-2 hover:text-black11 ${activeSection === "login" ? "bg-white text-black" : ""}`}
+                className={`rounded-md tracking-wide transition-all uppercase cursor-pointer duration-300 ease-out hover:bg-white hover:text-black px-3 py-2 hover:text-black11 ${activeSection === "login" ? "bg-white text-black" : ""}`}
               >
-                SIGN IN
+                recruitment
               </li>
             </Link>
 

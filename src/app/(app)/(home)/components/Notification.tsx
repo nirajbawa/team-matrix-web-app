@@ -11,9 +11,11 @@ import {
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import NoImage from "@/assets/images/banner.jpg";
+import { useRouter } from "next/navigation";
 
 function Notification() {
   const [open, setOpen] = useState<boolean>(false);
+  const router = useRouter();
 
   useEffect(() => {
     setTimeout(() => {
@@ -45,10 +47,7 @@ function Notification() {
           <DialogFooter className="flex justify-between">
             <Button
               onClick={() => {
-                window.open(
-                  "https://docs.google.com/forms/d/e/1FAIpQLSeBEAGQlYInnTMTOkVPdeCwD-ReYSoGozWl6AH-T0yEO_4s2A/viewform?usp=send_form",
-                  "__blank"
-                );
+                router.replace("/recruitment");
                 setOpen(false);
               }}
               type="button"

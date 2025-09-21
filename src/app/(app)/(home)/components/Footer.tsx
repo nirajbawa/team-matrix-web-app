@@ -98,8 +98,8 @@ function Footer() {
           className={`w-full md:w-[30%] md:font-bold md:mt-0 ${norwester.className} tracking-[0.1rem]  mt-10 text-center flex-col gap-y-4 flex gap-x-3 items-center justify-center`}
         >
           <div className="space-x-2 w-full text-center md:text-left">
-            <WhatsAppIcon /> <Link href="tel:9855762411">8956271193</Link> /
-            <Link href="tel:9855762411">9855762411</Link>
+            <WhatsAppIcon /> <Link href="tel:8412843505">8412843505</Link> /
+            <Link href="tel:8956271193">8956271193</Link>
           </div>
           <div className="flex gap-x-2 flex-wrap w-full text-center items-center justify-center md:justify-start md:text-left md:tracking-[0.2rem]">
             <MailOutlineIcon />
