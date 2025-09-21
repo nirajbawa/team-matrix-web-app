@@ -21,7 +21,7 @@ async function MembersCardContainer() {
         item.position === "Manager" || item.position === "Co-Manager"
     );
     const filtered3 = data?.filter(
-      (item: any) => item.position == "Vice Captain"
+      (item: any) => item.position == "Algorithms Head"
     );
     const [second, third] = filtered2 || [];
     const [fourth] = filtered3 || [];
@@ -31,7 +31,7 @@ async function MembersCardContainer() {
         item.position !== "Manager" &&
         item.position !== "Co-Manager" &&
         item.position !== "Captain" &&
-        item.position !== "Vice Captain"
+        item.position !== "Algorithms Head"
     );
 
     return (

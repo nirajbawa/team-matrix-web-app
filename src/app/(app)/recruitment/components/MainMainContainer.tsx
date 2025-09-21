@@ -30,28 +30,30 @@ function MainMainContainer() {
   const features = [
     {
       icon: Target,
-      title: "Mission-Driven",
-      description: "Work on projects that make a real impact",
+      title: "Innovation in Action",
+      description:
+        "Work on robotics projects that push boundaries and create real-world impact.",
     },
     {
       icon: Users,
-      title: "Collaborative",
-      description: "Join a team of passionate innovators",
+      title: "Power of Collaboration",
+      description:
+        "Work alongside a team of driven innovators shaping the future.",
     },
     {
       icon: Trophy,
-      title: "Growth-Focused",
-      description: "Continuous learning and skill development",
+      title: "Limitless Learning",
+      description: "Grow your expertise with every challenge.",
     },
   ];
 
   const benefits = [
-    "Flexible remote work options",
-    "Competitive compensation package",
-    "Professional development budget",
-    "Equity participation program",
-    "Annual team retreats",
-    "Experience or visibility on a global level",
+    "Gain national & international exposure",
+    "Participate in hands-on workshops and competitions",
+    "Build cutting-edge autonomous solutions",
+    "Collaborate with passionate innovators",
+    "Learn and grow with every project",
+    "Think big, experiment freely",
   ];
 
   return (
@@ -130,21 +132,26 @@ function MainMainContainer() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold dark:text-white mb-8 leading-tight">
-              Where Innovation Meets{" "}
-              <span className="text-[#ff0002]">Excellence</span>
+              Where Robots Rise and
+              <span className="text-[#ff0002]"> Boundaries Fall</span>
             </h2>
             <p className="text-lg dark:text-gray-300 mb-8 leading-relaxed">
-              Team Matrix is more than just a workplace—it&apos;s a community of
-              visionaries, creators, and problem-solvers who are passionate
-              about pushing the boundaries of what&apos;s possible. We believe
-              in the power of collaboration, continuous learning, and making a
-              meaningful impact on the world.
+              Team Matrix is where Engineering Sparks Life Into Machines. Since
+              2022, we have grown from a small group building simple line
+              followers and RoboRace bots into a diverse, multidisciplinary
+              team. We specialize in designing autonomous sumo bots, maze
+              solvers, and advanced projects like autonomous drones, moon
+              rovers, and submarine robots, combining creativity, collaboration,
+              and technical expertise.
             </p>
             <p className="text-lg dark:text-gray-300 mb-8 leading-relaxed">
-              Our diverse team works on cutting-edge projects spanning AI,
-              Robotics, IOT, and sustainable technology. Every day brings new
-              challenges and opportunities to grow both professionally and
-              personally.
+              Our achievements speak for themselves — we have been finalists in
+              the ISRO Robotics Challenge for the past two years, and have won
+              national competitions including Robotex. With a focus on practical
+              innovation and real-world impact, we turn ideas into solutions
+              that challenge limits and redefine possibilities. At Team Matrix,
+              every challenge is an opportunity to rise, innovate, and push the
+              boundaries of what’s possible.
             </p>
           </div>
 
@@ -188,12 +195,11 @@ function MainMainContainer() {
         {/* CTA Section */}
         <div className="text-center bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-12 border border-white/10">
           <h3 className="text-3xl md:text-4xl font-bold dark:text-white mb-6">
-            Ready to Shape the Future?
+            Ready to Redefine Robotics?
           </h3>
           <p className="text-lg dark:text-gray-300 mb-10 max-w-2xl mx-auto">
-            Join our mission to build groundbreaking technology that transforms
-            industries and improves lives. Your next career adventure starts
-            here.
+            Join Team Matrix to develop groundbreaking robotics projects that
+            redefine what’s possible. Start your adventure in innovation today.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
