@@ -62,10 +62,7 @@ function MainMainContainer() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 uppercase">
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight mt-32">
-              Team{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r  text-[#ff0002]">
-                Matrix
-              </span>
+              Team <span className="text-[#ff0002]">Matrix</span>
             </h1>
             <p className="text-xl md:text-2xl  dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
               Join the future of innovation. We&apos;re building tomorrow&apos;s
@@ -134,9 +131,7 @@ function MainMainContainer() {
           <div>
             <h2 className="text-4xl md:text-5xl font-bold dark:text-white mb-8 leading-tight">
               Where Innovation Meets{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r text-[#ff0002]">
-                Excellence
-              </span>
+              <span className="text-[#ff0002]">Excellence</span>
             </h2>
             <p className="text-lg dark:text-gray-300 mb-8 leading-relaxed">
               Team Matrix is more than just a workplace—it&apos;s a community of
