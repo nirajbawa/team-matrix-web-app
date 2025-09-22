@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import AuthProvider from "@/providers/authProvider";
 import ThemeProvider from "@/providers/ThemeProvider";
+import NavProgress from "@/components/navbars/NavProgress";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,11 +26,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NavProgress />
         <AuthProvider>
-          <ThemeProvider />
-
-          {children}
-          <Toaster />
+          <ThemeProvider>
+            {/* Now properly wraps children */}
+            {children}
+            <Toaster />
+          </ThemeProvider>
         </AuthProvider>
       </body>
     </html>

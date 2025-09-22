@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import {
-  Play,
   Users,
   Target,
   Trophy,
@@ -12,7 +11,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 function MainMainContainer() {
-  const [isPlaying, setIsPlaying] = useState(false);
   const [isJoining, setIsJoining] = useState(false);
   const router = useRouter();
 
@@ -76,14 +74,7 @@ function MainMainContainer() {
           <div className="max-w-4xl mx-auto mb-16">
             <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl">
               <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
-                {!isPlaying ? (
-                  <button
-                    onClick={() => setIsPlaying(true)}
-                    className="group flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full border-2 border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
-                  >
-                    <Play className="w-8 h-8 text-white ml-1 group-hover:text-blue-300 transition-colors" />
-                  </button>
-                ) : (
+
                   <div className="w-full h-full flex items-center justify-center">
                     <iframe
                       width="100%"
@@ -96,7 +87,7 @@ function MainMainContainer() {
                       className="absolute inset-0"
                     ></iframe>
                   </div>
-                )}
+        
               </div>
             </div>
             <p className="text-center dark:text-gray-400 mt-4">

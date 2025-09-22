@@ -51,7 +51,9 @@ function About({ about }: AboutProps) {
             <button onClick={makeTextFull}>Less</button>
           </div>
 
-          <div className={`hidden sm:block dark:text-white text-black`}>
+          <div
+            className={`hidden sm:block dark:text-white text-center text-black`}
+          >
             {about1}
           </div>
         </div>

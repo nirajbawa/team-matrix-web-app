@@ -93,7 +93,7 @@ const HeroSection = () => {
             <MailOutlineIcon fontSize="large" />
           </Link>
         </div>
-        <Link href="#projects">
+        <Link href="#about">
           <LottiefilePlayer
             loop={lottieProps.loop}
             autoplay={lottieProps.autoplay}

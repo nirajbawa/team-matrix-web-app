@@ -46,6 +46,7 @@
     "nanoid": "^5.0.9",
     "next": "15.0.2",
     "next-auth": "^4.24.10",
+    "nextjs-progressbar": "^0.0.16",
     "nodemailer": "^6.9.16",
     "nodemon": "^3.1.7",
     "npm": "^11.0.0",
