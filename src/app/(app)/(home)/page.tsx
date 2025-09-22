@@ -31,7 +31,7 @@ export default async function Home() {
         <section id="footer">
           <FooterMain />
         </section>
-        <Notification />
+        {/* <Notification /> */}
       </div>
     </>
   );
