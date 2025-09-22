@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import HomeNavbar from "@/components/navbars/HomeNavbar";
 import Scripts from "./(home)/components/Scripts";
 import Script from "next/script";
+import NavProgress from "@/components/navbars/NavProgress";
 
 export const metadata: Metadata = {
   title: "Team Matrix",
@@ -62,6 +63,7 @@ export default function RootLayout({
 
       <div className="w-full overflow-hidden dark:bg-black">
         <HomeNavbar />
+                <NavProgress />
         {children}
       </div>
     </>
