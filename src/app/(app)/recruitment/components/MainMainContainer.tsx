@@ -1,12 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import {
-  Users,
-  Target,
-  Trophy,
-  ArrowRight,
-  CheckCircle,
-} from "lucide-react";
+import { Users, Target, Trophy, ArrowRight, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -74,20 +68,18 @@ function MainMainContainer() {
           <div className="max-w-4xl mx-auto mb-16">
             <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl">
               <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
-
-                  <div className="w-full h-full flex items-center justify-center">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/YCVmtaYGmBQ?si=l63voX5rgI4muK6h"
-                      title="Team Matrix Recruitment Video"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute inset-0"
-                    ></iframe>
-                  </div>
-        
+                <div className="w-full h-full flex items-center justify-center">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/deZW8okViQo?si=PeGXc9oIyX3W2uze"
+                    title="Team Matrix Recruitment Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0"
+                  ></iframe>
+                </div>
               </div>
             </div>
             <p className="text-center dark:text-gray-400 mt-4">
