@@ -36,6 +36,14 @@ function SettingsSidebar() {
             Members
           </ListItem>
         </Link>
+        <Link href="/admin/dashboard/settings/alumnis">
+          <ListItem>
+            <ListItemPrefix>
+              <UserGroupIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Alumnis
+          </ListItem>
+        </Link>
         <Link href="/admin/dashboard/settings/sponsors">
           <ListItem>
             <ListItemPrefix>

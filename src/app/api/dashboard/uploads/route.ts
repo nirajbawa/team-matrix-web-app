@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import uploadToCloudinary from "@/lib/uploadToCloudinary";
-import sharp from "sharp";
+
 
 export async function POST(req: NextRequest) {
   try {

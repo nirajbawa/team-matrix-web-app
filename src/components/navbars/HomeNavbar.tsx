@@ -158,11 +158,11 @@ function HomeNavbar() {
                 SPONSORS
               </li>
             </Link>
-            <Link href="/recruitment">
+            <Link href="/alumnis">
               <li
                 className={`rounded-md tracking-wide transition-all uppercase cursor-pointer duration-300 ease-out hover:bg-white hover:text-black px-3 py-2 hover:text-black11 ${activeSection === "login" ? "bg-white text-black" : ""}`}
               >
-                recruitment
+                Alumnis
               </li>
             </Link>
 
