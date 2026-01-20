@@ -74,9 +74,10 @@ function EditMemberDialog({
           variant: "destructive",
         });
       } else {
+        console.log(values);
         const payload = {
           name: values.name,
-          position: values.batch,
+          batch: values.batch,
           image: file,
         };
         let id = data?._id;
@@ -161,7 +162,7 @@ function EditMemberDialog({
 
   useEffect(() => {
     form.setValue("name", data?.name);
-    form.setValue("batch", data?.position);
+    form.setValue("batch", data?.batch);
     setFile(data?.image);
   }, [data]);
 

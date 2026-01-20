@@ -87,7 +87,11 @@ function HomeNavbar() {
           duration: 2, // Duration of the fade-in (2 seconds)
           ease: "easeInOut", // Easing function for smooth animation
         }}
-        className={`${isSticky ? "fixed top-0" : "absolute"} ${scrollDirection == "up" ? "flex" : "hidden"}  nav-glass-bg  ${lexend_giga.style} text-white w-full h-16 flex justify-center xl:justify-between items-center z-50`}
+        className={`${isSticky ? "fixed top-0" : "absolute"} ${
+          scrollDirection == "up" ? "flex" : "hidden"
+        }  nav-glass-bg  ${
+          lexend_giga.style
+        } text-white w-full h-16 flex justify-center xl:justify-between items-center z-50`}
       >
         <div className="w-[50%] flex justify-start xl:hidden text-xl px-4">
           <button
@@ -101,21 +105,27 @@ function HomeNavbar() {
           <ul className="flex justify-between gap-x-16 items-center text-lg pl-16">
             <Link href="/#about">
               <li
-                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "about" ? "bg-white text-black" : ""}`}
+                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${
+                  activeSection === "about" ? "bg-white text-black" : ""
+                }`}
               >
                 ABOUT
               </li>
             </Link>
             <Link href="/#projects">
               <li
-                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "projects" ? "bg-white text-black" : ""}`}
+                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${
+                  activeSection === "projects" ? "bg-white text-black" : ""
+                }`}
               >
                 PROJECTS
               </li>
             </Link>
             <Link href="/#our-stories">
               <li
-                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "our-stories" ? "bg-white text-black" : ""}`}
+                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${
+                  activeSection === "our-stories" ? "bg-white text-black" : ""
+                }`}
               >
                 STORIES
               </li>
@@ -153,22 +163,28 @@ function HomeNavbar() {
           <ul className="flex justify-between gap-x-16 items-center text-lg pr-9">
             <Link href="/#sponsors">
               <li
-                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${activeSection === "sponsors" ? "bg-white text-black" : ""}`}
+                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white px-3 py-2 hover:text-black ${
+                  activeSection === "sponsors" ? "bg-white text-black" : ""
+                }`}
               >
                 SPONSORS
               </li>
             </Link>
             <Link href="/alumnis">
               <li
-                className={`rounded-md tracking-wide transition-all uppercase cursor-pointer duration-300 ease-out hover:bg-white hover:text-black px-3 py-2 hover:text-black11 ${activeSection === "login" ? "bg-white text-black" : ""}`}
+                className={`rounded-md tracking-wide transition-all uppercase cursor-pointer duration-300 ease-out hover:bg-white hover:text-black px-3 py-2 hover:text-black11 ${
+                  activeSection === "login" ? "bg-white text-black" : ""
+                }`}
               >
-                Alumnis
+                ALUMNIS
               </li>
             </Link>
 
             <Link href="/members">
               <li
-                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white hover:text-black px-3 py-2 hover:text-black11 ${activeSection === "recruitment" ? "bg-white text-black" : ""}`}
+                className={`rounded-md tracking-wide transition-all cursor-pointer duration-300 ease-out hover:bg-white hover:text-black px-3 py-2 hover:text-black11 ${
+                  activeSection === "recruitment" ? "bg-white text-black" : ""
+                }`}
               >
                 MEMBERS
               </li>

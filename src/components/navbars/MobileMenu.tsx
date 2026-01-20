@@ -41,9 +41,9 @@ function MobileMenu({
               SPONSORS
             </li>
           </Link>
-          <Link href="/recruitment" onClick={toggleMenu}>
+          <Link href="/alumnis" onClick={toggleMenu}>
             <li className="w-full text-white uppercase text-center h-16 flex justify-center items-center">
-              recruitment
+              ALUMNIS
             </li>
           </Link>
           <Link href="/members" onClick={toggleMenu}>

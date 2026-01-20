@@ -16,7 +16,7 @@ function MembersScrollCards({ data }: MembersProps) {
         <h1 className="text-4xl text-white mt-20 sm:mt-36 md:text-5xl font-bold  mb-4">
           Our Alumni
         </h1>
-        <p className="text-gray-50 max-w-2xl mx-auto px-4">
+        <p className="text-gray-50 text-xl max-w-2xl mx-auto px-4">
           Meet the brilliant minds who have been part of our journey
         </p>
       </div>

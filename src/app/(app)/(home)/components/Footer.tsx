@@ -85,7 +85,7 @@ function Footer() {
                 <Link href="/members">members</Link>
               </li>
               <li className="w-full">
-                <Link href="/#sponsors">sponsers</Link>
+                <Link href="/#sponsors">sponsors</Link>
               </li>
               <li className="w-full">
                 <Link href="/admin/auth">Admin Login</Link>
