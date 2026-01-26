@@ -18,10 +18,10 @@ async function MembersCardContainer() {
     const [first] = filtered1 || [];
     const filtered2 = data?.filter(
       (item: any) =>
-        item.position === "Manager" || item.position === "Electronics Head"
+        item.position === "Manager" || item.position === "Electronics Head",
     );
     const filtered3 = data?.filter(
-      (item: any) => item.position == "Algorithms Head"
+      (item: any) => item.position == "Algorithms Head",
     );
     const [second, third] = filtered2 || [];
     const [fourth] = filtered3 || [];
@@ -31,7 +31,7 @@ async function MembersCardContainer() {
         item.position !== "Manager" &&
         item.position !== "Electronics Head" &&
         item.position !== "Captain" &&
-        item.position !== "Algorithms Head"
+        item.position !== "Algorithms Head",
     );
 
     return (
@@ -51,11 +51,13 @@ async function MembersCardContainer() {
             position={second?.position}
           />
           <div className=" sm:block sm:mt-28">
-            <MembersCard
-              image={first?.image}
-              name={first?.name}
-              position={first?.position}
-            />
+            <div className="hidden sm:block">
+              <MembersCard
+                image={first?.image}
+                name={first?.name}
+                position={first?.position}
+              />
+            </div>
             <MembersCard
               image={fourth?.image}
               name={fourth?.name}
