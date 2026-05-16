@@ -15,24 +15,30 @@ const fetchData = async (): Promise<Stories[]> => {
   return JSON.parse(stories);
 };
 
-async function OurStories() {
-  await dbConnect();
-  const data = await fetchData();
 
-  return (
-    <div className="w-full h-full">
-      <h1
-        data-aos="flip-up"
-        data-aos-duration="4000"
-        className={`w-full text-center font-extrabold uppercase text-4xl ${league_spartan.className}`}
-      >
-        our stories
-      </h1>
-      <div className="w-full min-h-svh h-full flex px-6 md:px-10 py-10 flex-col md-xs:flex-row">
-        <OurStoriesContainer data={data} />
+async function OurStories() {
+  try {
+    await dbConnect();
+    const data = await fetchData();
+
+    return (
+      <div className="w-full h-full">
+        <h1
+          data-aos="flip-up"
+          data-aos-duration="4000"
+          className={`w-full text-center font-extrabold uppercase text-4xl ${league_spartan.className}`}
+        >
+          our stories
+        </h1>
+        <div className="w-full min-h-svh h-full flex px-6 md:px-10 py-10 flex-col md-xs:flex-row">
+          <OurStoriesContainer data={data} />
+        </div>
       </div>
-    </div>
-  );
+    );
+  } catch (error) {
+    console.error("Error fetching stories:", error);
+    return <div className="w-full h-full p-10 text-center text-red-500">Failed to load stories.</div>;
+  }
 }
 
 export default OurStories;

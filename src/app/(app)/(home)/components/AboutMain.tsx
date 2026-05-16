@@ -6,15 +6,9 @@ import dbConnect from "@/lib/dbConnect";
 async function AboutMain() {
   try {
     await dbConnect();
-
-    // Fetch data from the database
     const data = await AboutModel.find({});
-
-    // Map and filter data
     const tempData = data.map((item) => ({ text: item.text, index: 1 }));
     const filteredData = tempData.filter((item) => item.index === 1);
-
-    // Handle case where no data matches
     const [about1] = filteredData;
     if (!about1) {
       throw new Error("No about data found.");

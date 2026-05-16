@@ -3,9 +3,8 @@ import VisitorsModel from "@/models/Visitors";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-    await dbConnect();
-
     try {
+        await dbConnect();
         const ip = (req.headers.get('x-forwarded-for') ?? '127.0.0.1').split(',')[0];
 
         if (ip !== "unknown") {
@@ -39,8 +38,8 @@ export async function POST(req: NextRequest) {
 
 
 export async function GET(req: NextRequest) {
-    await dbConnect();
     try {
+        await dbConnect();
         const count = await VisitorsModel.countDocuments({});
         // Return success response
         return NextResponse.json(

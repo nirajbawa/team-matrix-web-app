@@ -30,7 +30,7 @@ function SponsorsCards({ sponsorItem }: { sponsorItem: Sponsors[] }) {
         <CarouselContent>
           {sponsorItem.map((itemData: Sponsors, index: number) => (
             <CarouselItem
-              key={index}
+              key={itemData._id}
               className="basis-1/2 md:basis-1/3 md-xs:basis-1/5"
             >
               <div className="p-1 md-xs:p-10">

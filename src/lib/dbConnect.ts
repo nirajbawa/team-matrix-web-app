@@ -5,17 +5,31 @@ type ConnectionObject = {
 };
 
 const connection: ConnectionObject = {};
+let cachedPromise: Promise<typeof mongoose> | null = null;
 
 async function dbConnect(): Promise<void> {
   if (connection.isConnected) {
     return;
   }
 
+  if (cachedPromise) {
+    await cachedPromise;
+    return;
+  }
+
   try {
-    const db = await mongoose.connect(process.env.MONGO_DB_URI || "", {});
+    const opts = {
+      serverSelectionTimeoutMS: 5000,
+      connectTimeoutMS: 10000,
+    };
+
+    cachedPromise = mongoose.connect(process.env.MONGO_DB_URI || "", opts);
+    const db = await cachedPromise;
+    
     connection.isConnected = db.connections[0].readyState;
   } catch (error) {
-    process.exit(0);
+    cachedPromise = null;
+    throw error;
   }
 }
 

@@ -11,32 +11,43 @@ const league_spartan = League_Spartan({
 });
 
 async function Sponsors() {
-  await dbConnect();
-  await dbConnect();
-  const data = await SponsorsModel.find({}).lean();
+  try {
+    await dbConnect();
+    const data = await SponsorsModel.find({}).lean();
 
-  // Map the data to match your type
-  const items = data.map((item) => ({
-    _id: item._id.toString(),
-    name: item.name,
-    image: item.image,
-    section: item.section,
-  })) as SponsorsType[];
+    // Map and filter out duplicates based on name
+    const uniqueSponsorsMap = new Map();
+    data.forEach((item) => {
+      if (!uniqueSponsorsMap.has(item.name)) {
+        uniqueSponsorsMap.set(item.name, {
+          _id: item._id.toString(),
+          name: item.name,
+          image: item.image,
+          section: item.section,
+        });
+      }
+    });
 
-  return (
-    <div className="w-full h-full mb-5">
-      <h1
-        data-aos="flip-up"
-        data-aos-duration="4000"
-        className={`w-full text-center pt-10 pb-5 font-extrabold uppercase text-4xl sm:text-5xl md:text-4xl  ${league_spartan.className}`}
-      >
-        sponsors
-      </h1>
-      <div className="w-full flex flex-col">
-        <SponsorsCards sponsorItem={items} />
+    const items = Array.from(uniqueSponsorsMap.values()) as SponsorsType[];
+
+    return (
+      <div className="w-full h-full mb-5">
+        <h1
+          data-aos="flip-up"
+          data-aos-duration="4000"
+          className={`w-full text-center pt-10 pb-5 font-extrabold uppercase text-4xl sm:text-5xl md:text-4xl  ${league_spartan.className}`}
+        >
+          sponsors
+        </h1>
+        <div className="w-full flex flex-col">
+          <SponsorsCards sponsorItem={items} />
+        </div>
       </div>
-    </div>
-  );
+    );
+  } catch (error) {
+    console.error("Error fetching sponsors:", error);
+    return <div className="w-full h-full p-10 text-center text-red-500 font-bold uppercase text-2xl">Failed to load sponsors.</div>;
+  }
 }
 
 export default Sponsors;

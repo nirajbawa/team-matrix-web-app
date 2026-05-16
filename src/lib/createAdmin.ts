@@ -23,4 +23,4 @@ export async function createAdmin() {
   }
 }
 
-createAdmin();
+// createStories();
